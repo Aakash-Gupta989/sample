@@ -22,7 +22,13 @@ except Exception as e:
     from services.mock_openai_service import MockOpenAIService as OpenAIService
     print(f"🔧 Fallback to mock OpenAI service: {e}")
 from services.groq_service import GroqService
-from services.whisper_service import WhisperService
+# Use lightweight whisper service for Render free tier
+try:
+    from services.whisper_service_light import WhisperService
+    print("🔧 Using lightweight Whisper service (OpenAI API)")
+except ImportError:
+    from services.whisper_service import WhisperService
+    print("🔧 Using full Whisper service (local model)")
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
