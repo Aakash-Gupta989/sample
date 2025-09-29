@@ -1,0 +1,140 @@
+{
+  "test_metadata": {
+    "resume_file": "aakash_mechanical_resume.txt",
+    "job_description": "mechanical_engineer_jd.txt",
+    "interview_type": "technical_behavioral",
+    "test_timestamp": "2025-09-28T18:57:22.992504",
+    "max_turns": 12,
+    "total_duration": "131.15 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 0,
+    "behavioral_questions_count": 1,
+    "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear you're excited about the opportunity! To better understand your fit for the Senior Mechanical Design Engineer role, can you tell me about a specific project where you applied your mechanical design skills and what your role was in that project?",
+      "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was generic and did not provide specific details about their mechanical design skills or their role in a particular project. The answer lacked the specific evidence and examples that would demonstrate their experience and expertise.",
+        "next_utterance": "That's great that you've worked on various technical projects and challenging problems. To better understand your mechanical design skills, can you describe a specific project where you applied your expertise and quantify the impact it had, such as efficiency improvements or cost reductions?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "That's great that you've worked on various technical projects and challenging problems. To better understand your mechanical design skills, can you describe a specific project where you applied your expertise and quantify the impact it had, such as efficiency improvements or cost reductions?",
+      "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer deviated from the topic of mechanical design skills and instead discussed a project involving Python and microservices architecture. This does not directly address the question about mechanical design skills and quantifying the impact of their work.",
+        "next_utterance": "I appreciate you sharing your experience with distributed systems, but I'd like to refocus on mechanical design. Can you describe a specific mechanical design project you worked on and quantify the impact it had, such as efficiency improvements or cost reductions?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "I appreciate you sharing your experience with distributed systems, but I'd like to refocus on mechanical design. Can you describe a specific mechanical design project you worked on and quantify the impact it had, such as efficiency improvements or cost reductions?",
+      "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Your resume mentions you led the development of IP68-rated enclosures at John Deere from ideation to mass production. Can you walk me through the most significant technical challenge you faced in achieving that IP68 rating?"
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Your resume mentions you led the development of IP68-rated enclosures at John Deere from ideation to mass production. Can you walk me through the most significant technical challenge you faced in achieving that IP68 rating?",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Imagine you're tasked with designing a new battery enclosure for an electric vehicle. The requirement is to minimize weight while maintaining structural integrity and thermal performance. How would you approach this challenge, and what tools or methodologies would you use?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Imagine you're tasked with designing a new battery enclosure for an electric vehicle. The requirement is to minimize weight while maintaining structural integrity and thermal performance. How would you approach this challenge, and what tools or methodologies would you use?",
+      "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was generic and lacked specific details about their approach to designing a battery enclosure for an electric vehicle. They mentioned analyzing requirements and designing a scalable solution but did not provide concrete examples or methodologies used.",
+        "next_utterance": "That's a good start, but I'd like more specifics. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "That's a good start, but I'd like more specifics. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use?",
+      "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was generic and did not directly address the specific question about designing a battery enclosure for an electric vehicle, minimizing weight while maintaining structural integrity and thermal performance. The candidate mentioned that proper testing and documentation are crucial but did not provide the specific details or examples requested.",
+        "next_utterance": "I appreciate your emphasis on testing and documentation. However, I'd like to refocus on the specific challenge of designing a battery enclosure. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use to achieve this balance?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "I appreciate your emphasis on testing and documentation. However, I'd like to refocus on the specific challenge of designing a battery enclosure. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use to achieve this balance?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer did not provide specific details about designing a battery enclosure, instead expressing a desire to discuss other aspects of the role. This indicates a lack of willingness to engage with the specific technical challenge presented.",
+        "next_utterance": "I understand you'd like to discuss other areas, but I'd like to revisit the question about designing a battery enclosure for an electric vehicle. Can you describe a specific project where you had to balance weight, structural integrity, and thermal performance? What tools or methodologies did you use?"
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "I understand you'd like to discuss other areas, but I'd like to revisit the question about designing a battery enclosure for an electric vehicle. Can you describe a specific project where you had to balance weight, structural integrity, and thermal performance? What tools or methodologies did you use?",
+      "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?",
+      "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "The candidate's last answer did not directly address the question about designing a battery enclosure for an electric vehicle. Instead, they mentioned mentoring other engineers and contributing to internal documentation and training materials, which is not relevant to the specific technical question asked.",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 10,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 11,
+      "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on delivering exceptional electric vehicles. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive product development. Currently, our team is focused on scaling production and addressing complex engineering challenges, such as optimizing battery performance and improving vehicle aerodynamics. Do you have any other questions?",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Thermal",
+      "Enclosure",
+      "Mechanical Design"
+    ],
+    "topic_repetition_detected": true,
+    "interview_completed_successfully": true,
+    "total_turns": 11,
+    "api_calls_made": 0
+  }
+}

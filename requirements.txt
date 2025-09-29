@@ -1,0 +1,48 @@
+# Core dependencies for Intelligent Interview System
+
+# HTTP requests for API calls
+requests>=2.31.0
+
+# Data processing and analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# JSON handling (built-in, but listing for clarity)
+# json - built-in Python module
+
+# String similarity matching
+difflib  # built-in Python module
+
+# Type hints and dataclasses (Python 3.7+)
+typing-extensions>=4.0.0
+
+# Date and time handling
+# datetime - built-in Python module
+
+# Regular expressions
+# re - built-in Python module
+
+# Enum support
+# enum - built-in Python module
+
+# Optional: For enhanced text processing
+nltk>=3.8.0
+
+# Optional: For advanced data structures
+dataclasses-json>=0.5.0
+
+# Optional: For configuration management
+python-dotenv>=1.0.0
+
+# Optional: For logging
+loguru>=0.7.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Documentation (optional)
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0

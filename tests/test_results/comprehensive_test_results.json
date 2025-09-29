@@ -1,0 +1,196 @@
+{
+  "test_summary": {
+    "overall_stats": {
+      "total_tests": 6,
+      "passed_tests": 0,
+      "failed_tests": 6,
+      "success_rate": "0.0%"
+    },
+    "by_interview_type": {
+      "technical_only": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2
+      },
+      "behavioral_only": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2
+      },
+      "technical_behavioral": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2
+      }
+    },
+    "key_findings": [
+      "⚠️ 6 tests failed - requires investigation",
+      "✅ No topic repetition issues detected"
+    ]
+  },
+  "individual_results": {
+    "aakash_mechanical_technical_only": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "technical_only",
+        "test_timestamp": "2025-09-28T18:34:07.121605",
+        "max_turns": 12,
+        "total_duration": "4.32 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    },
+    "aakash_mechanical_behavioral_only": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "behavioral_only",
+        "test_timestamp": "2025-09-28T18:34:11.443675",
+        "max_turns": 12,
+        "total_duration": "33.67 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 0,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "INCORRECT - Expected only behavioral questions"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    },
+    "aakash_mechanical_technical_behavioral": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "technical_behavioral",
+        "test_timestamp": "2025-09-28T18:34:45.116989",
+        "max_turns": 12,
+        "total_duration": "33.89 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_technical_only": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "technical_only",
+        "test_timestamp": "2025-09-28T18:35:19.011270",
+        "max_turns": 12,
+        "total_duration": "49.83 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_behavioral_only": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "behavioral_only",
+        "test_timestamp": "2025-09-28T18:36:08.838246",
+        "max_turns": 12,
+        "total_duration": "50.83 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "INCORRECT - Expected only behavioral questions"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_technical_behavioral": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "technical_behavioral",
+        "test_timestamp": "2025-09-28T18:36:59.671042",
+        "max_turns": 12,
+        "total_duration": "34.79 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+      },
+      "conversation_flow": [],
+      "test_results": {
+        "status": "FAIL",
+        "errors": [
+          "Failed to submit introduction"
+        ],
+        "topics_covered": [],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": false,
+        "total_turns": 0,
+        "api_calls_made": 0
+      }
+    }
+  },
+  "test_timestamp": "2025-09-28T18:37:34.464589"
+}

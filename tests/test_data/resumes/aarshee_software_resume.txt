@@ -1,0 +1,108 @@
+Aarshee Bhattacharya
+Fargo, North Dakota
+Phone: 470-807-7471 Email: aarshee25bhattacharya@gmail.com LinkedIn: linkedin.com/in/aarshee-bhattacharya GitHub:
+github.com/Aarsheeb
+Education
+University of Florida Aug. 2021 – Dec. 2022
+Master of Science in Computer Science (GPA:3.7) Gainesville, FL
+MIT WPU July 2017 – May 2021
+Bachelor of Technology in Computer Science (GPA:4.0) Pune, Maharashtra, India
+Relevant Coursework
+•Data Structures
+•Software Methodology•Algorithms Analysis
+•Database Management•Artificial Intelligence
+•Internet Technology•Systems Programming
+•Machine Learning
+Experience
+Pursuit Software Inc. Aug. 2023 – Present
+Quality Software Engineer Fargo, ND
+•Developed and maintained automation frameworks using Python and Java, integrating with Azure DevOps APIs to
+create scalable testing infrastructure supporting continuous deployment pipelines
+•Built containerized applications using Docker and Docker Compose, implementing microservices architecture with proper
+service discovery and load balancing for distributed systems
+•Designed and implemented monitoring solutions using Azure Monitor, Grafana, and ELK Stack, creating custom
+dashboards and alerting systems for real-time application performance tracking
+•Developed REST API integrations with OAuth 2.0 and JWT authentication, implementing secure communication
+protocols between multiple microservices and external systems
+•Architected cloud infrastructure using Terraform and Azure Resource Manager templates, automating provisioning and
+configuration management for scalable cloud-native applications
+•Implemented CI/CD pipelines with automated testing, deployment, and rollback capabilities, reducing deployment time
+by 60% and ensuring zero-downtime releases
+•Mentored junior developers on software engineering best practices, code review processes, and modern development
+methodologies including Agile and DevOps practices
+•Implemented secure API testing protocols using OAuth 2.0 and JWT token validation, coverage and authentication
+mechanism verification for ensuring security testing.
+•Established quality gates and testing standards in collaboration with development teams, mentoring junior QA engineers
+on automated testing best practices and quality assurance methodologies.
+Marlabs LLC Feb. 2023 – Aug. 2023
+Full Stack Developer Gainesville, FL
+•Built a full-stack hotel reservation web application, utilizing Spring Framework for the back-end to leverage its
+dependency injection and MVC architecture, Angular.js for the front-end to create dynamic user interfaces, and
+MongoDB for flexible and scalable data storage.
+•Implemented Agile methodologies.
+•Ensured iterative development, frequent communication, and adaptability.
+•Conducted bug tracking.
+•Managed Kubernetes clusters for microservice deployments, integrating Prometheus and Grafana for performance
+monitoring, reducing downtime by 30%
+•Developed JMeter test plans for stress testing of the hotel reservation APIs, scaling user simulations to identify system
+performance limits.
+Amazon.com May 2022 – Aug. 2022
+Software Developer Arlington, VA
+•Integrated Slack and Chime with webhooks.
+•Automated application deployments using Helm charts, optimizing deployment time by 25%.
+•Performed performance testing of messaging integrations, using JMeter’s distributed testing mode to simulate concurrent
+usage.
+University Of Florida Nov. 2021 – Nov. 2022
+Machine Learning Engineer Gainesville, FL
+•Extracted image features and saved them as embeddings using CNN models to capture high-level visual information.
+•Tokenized textual captions into word sequences and converted them into integer sequences using word embeddings like
+Word2Vec and GloVe.
+•Designed neural network architecture combining visual and textual information for caption generation using
+encoder-decoder architecture with attention mechanisms.
+•Implemented the model using PyTorch, leveraging its dynamic computation graph for flexible deep learning development.
+ISKCON July 2020 – Dec. 2020
+Mobile Application Developer Intern Pune, India
+•Developed a mobile application from scratch along with a website.
+•Kotlin: Primary programming language for Android development.
+•Android Jetpack Components.
+•Utilized Architecture Components like ViewModel, LiveData, and Room for data management.
+•Firebase: Integrated Firebase Cloud Messaging (FCM) for push notifications and Firebase Realtime Database for
+real-time data updates.
+•ExoPlayer: Used for streaming live video content for temple ceremonies.
+•RecyclerView: Displayed lists of events, services, and resources in a scrollable manner.
+•Material Design Components: Implemented UI components following Material Design guidelines for a modern and
+intuitive user interface.
+•Designed another mobile application with Flutter Software Development Kit and Dart.
+•Received a feedback of 4.7 out of 5.
+•Wrote 20K+ lines of code and led a team of two.
+AI Full-Stack Project
+Uternity May 2025 – Present
+Co-Founder Fargo, ND
+∗Led technical architecture and development of AI-powered international student admission platform serving students
+across 500+ universities worldwide
+∗Architected University Finder tool and AI agents including SOP generator, chatbot, and comparison engine, delivering
+personalized university recommendations with 90%+ compatibility accuracy
+∗Developed integrated platform streamlining entire admission journey from research to application, reducing student
+preparation time by 60% through automated AI-driven guidance
+Projects
+∗Healthcare Monitoring System-Integrated medical-grade sensors with Raspberry Pi for data acquisition developed Python
+scripts to read sensor data accurately and reliably and ensured reliable data transmission in remote and challenging
+environments.
+∗MyMovieList-Integrated with a movie database API for a movie recommendation API, with a collection of over 50,000
+movies and applied a recommendation engine that generated personalized movie recommendations resulting 25% user
+engagement.
+∗Automatic Parking System- Mounted an automatic parking system using RFID and sensors.
+Technical Skills
+Programming Languages : Java, Python, C/C++, JavaScript, SQL, R, C#, HTML/CSS, Shell Scripting, Groovy
+Frameworks & Libraries : Spring Boot, React, Node.js, Flask, Django, .NET, Angular, Vue.js, Flutter, Material-UI,
+FastAPI, JUnit, Mockito
+Cloud & DevOps : Azure, AWS, Google Cloud Platform, Docker, Kubernetes, Jenkins, Terraform, CI/CD Pipelines
+Databases & Storage : MongoDB, PostgreSQL, Oracle RDBMS
+Testing & Monitoring : JMeter, Tosca, QTest, Cypress, Grafana, ELK Stack
+Tools & Platforms : Git, VS Code, IntelliJ, PyCharm, Eclipse, Jira, Confluence, Linux
+Architecture & Patterns : Microservices, ORM, JPA, Hibernate, Agile Development
+Leadership
+Hackathon Jul 2020
+·Participating in the Smart India Hackathon involves teams collaborating to tackle complex software development projects
+aimed at addressing various societal or technical challenges faced by India. Pitched in Secure Healthcare Monitoring
+System for War Soldiers and secured the second position

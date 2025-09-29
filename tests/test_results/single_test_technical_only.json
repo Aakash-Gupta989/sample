@@ -1,0 +1,140 @@
+{
+  "test_metadata": {
+    "resume_file": "aakash_mechanical_resume.txt",
+    "job_description": "mechanical_engineer_jd.txt",
+    "interview_type": "technical_only",
+    "test_timestamp": "2025-09-28T18:51:05.343418",
+    "max_turns": 12,
+    "total_duration": "89.13 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 5,
+    "behavioral_questions_count": 0,
+    "interview_type_routing": "CORRECT"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear! Can you elaborate on your background and experience, particularly in mechanical design engineering, and how you think it aligns with the requirements of this Senior Mechanical Design Engineer role at Lucid Motors?",
+      "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate has provided a general overview of their experience in mechanical design engineering and mentioned working on challenging problems, but lacks specific details about their background and how it aligns with the Senior Mechanical Design Engineer role at Lucid Motors.",
+        "next_utterance": "That's a good start. Can you provide a specific example of a challenging problem you've worked on in your previous role and how you addressed it?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "That's a good start. Can you provide a specific example of a challenging problem you've worked on in your previous role and how you addressed it?",
+      "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate mentioned working on a distributed system using Python and Docker containers, which is not directly related to mechanical design engineering. The answer seems to be off-topic for the Senior Mechanical Design Engineer role at Lucid Motors.",
+        "next_utterance": "That's an interesting project, but I'm having trouble seeing how it relates to mechanical design engineering. Can you help me understand how your experience with distributed systems and Docker containers applies to the mechanical design aspects of this role?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "That's an interesting project, but I'm having trouble seeing how it relates to mechanical design engineering. Can you help me understand how your experience with distributed systems and Docker containers applies to the mechanical design aspects of this role?",
+      "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Design a mechanical system for a high-performance electric vehicle. Explain your material selection, structural analysis, and design for manufacturability."
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Design a mechanical system for a high-performance electric vehicle. Explain your material selection, structural analysis, and design for manufacturability.",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the design considerations for a cast metal component in an automotive application. How do you ensure design for manufacturability (DFM) and what casting process would you recommend?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the design considerations for a cast metal component in an automotive application. How do you ensure design for manufacturability (DFM) and what casting process would you recommend?",
+      "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was vague and lacked specific details about design considerations for a cast metal component, DFM, and the recommended casting process. Although they claimed to have 'solid experience' with similar challenges, their response did not demonstrate a clear understanding or provide concrete examples.",
+        "next_utterance": "That's an interesting approach. Can you provide a specific example of a cast metal component you've worked on, and walk me through your design and manufacturing considerations?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "That's an interesting approach. Can you provide a specific example of a cast metal component you've worked on, and walk me through your design and manufacturing considerations?",
+      "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer focused on testing and documentation, which is not directly relevant to the question about design considerations for a cast metal component. The response did not address the specific aspects of casting or design for manufacturability.",
+        "next_utterance": "While testing and documentation are important, they don't directly address the design considerations for a cast metal component. Can you walk me through your thought process when designing a component for casting, and how you ensure it's manufacturable?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "While testing and documentation are important, they don't directly address the design considerations for a cast metal component. Can you walk me through your thought process when designing a component for casting, and how you ensure it's manufacturable?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. A mechanical component is experiencing fatigue failure. Walk me through your step-by-step analysis to identify the root cause and propose a solution."
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. A mechanical component is experiencing fatigue failure. Walk me through your step-by-step analysis to identify the root cause and propose a solution.",
+      "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer did not directly address the question about analyzing a mechanical component experiencing fatigue failure. Instead, they reiterated their experience with a particular technology stack and optimizing for performance and maintainability, which is not relevant to the mechanical design aspect of the question.",
+        "next_utterance": "Let's refocus on the mechanical aspect. When analyzing a mechanical component experiencing fatigue failure, what specific steps would you take to identify the root cause and propose a solution?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "Let's refocus on the mechanical aspect. When analyzing a mechanical component experiencing fatigue failure, what specific steps would you take to identify the root cause and propose a solution?",
+      "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Error in conductor analysis: Could not extract required JSON fields",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 10,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 11,
+      "ai_question": "Haaland At Lucid Motors targets innovative electric vehicle design, fervent over achievers are always welcome. As we're scaling up rapidly you're in with good company pushing boundaries of cutting edge mobility the Senior Mechanical cadr design Page on our team, focusing on Page Vehicle Structural Integrations works directly within engineering teams tackling major automotive projects, so a challenge includes aligning and executing precise high volume designs at scale hastily - while retaining design integrity on the vehicle structures . On the upside, there's aоми collaborative atmosphere nurturing pro activity – to contribute fresh ideas coordinately , Do you have роп other questions . . \n No Re: Do you Page other question -> becomes **short, positive 'Do you haveuestions ':** becomes \n Here a short more concise positive \n At Lucidjon Motors, you'd be part ofotlarn innovative design; the big challenge for your teamстинthe Vehicle Structural cadr is scaling innovatior high design at design high volume era scale, innovdesign, while sustaining vehicle structura Integrity - We value proactive thinking that conrdinates new insight, Do you haveuest r other questions Page more concise ' Do younero questons', then one morepage\nHere's a vietnam concise  rewritten response in best interviewer, concise  mode.  \n At Lucidemand, the structural design challenge for the new S ME to face includes designing scale manufacturing while assuring, quality to meetоми high engineering standards – with an, collab, env, that enables you to share perspectives,",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Manufacturing",
+      "Docker",
+      "Mechanical Design"
+    ],
+    "topic_repetition_detected": true,
+    "interview_completed_successfully": true,
+    "total_turns": 11,
+    "api_calls_made": 0
+  }
+}

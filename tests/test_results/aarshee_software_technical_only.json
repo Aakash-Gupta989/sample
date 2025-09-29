@@ -1,0 +1,138 @@
+{
+  "test_metadata": {
+    "resume_file": "aarshee_software_resume.txt",
+    "job_description": "software_developer_jd.txt",
+    "interview_type": "technical_only",
+    "test_timestamp": "2025-09-28T19:00:04.152354",
+    "max_turns": 12,
+    "total_duration": "99.85 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 5,
+    "behavioral_questions_count": 0,
+    "interview_type_routing": "CORRECT"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear about your enthusiasm for the role. Let's dive into the technical aspects. Design a scalable data processing system that can handle a high volume of concurrent requests. How would you ensure its reliability and performance?",
+      "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's response was too general and didn't directly address the question about designing a scalable data processing system. It lacked specific technical details and examples.",
+        "next_utterance": "That's an interesting start. To dive deeper, can you walk me through a specific example of a scalable data processing system you've designed or worked on? What were some of the key challenges you faced, and how did you address them?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "That's an interesting start. To dive deeper, can you walk me through a specific example of a scalable data processing system you've designed or worked on? What were some of the key challenges you faced, and how did you address them?",
+      "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate mentioned working on a distributed system using Python and microservices architecture with Docker containers. This indicates some experience with scalable systems, but the details are still general. The topic of 'scalable data processing system' is 'COVERED_GENERALLY'.",
+        "next_utterance": "That's a good start. Can you elaborate on how you handled data consistency and fault tolerance in your distributed system? What specific strategies or technologies did you use?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "That's a good start. Can you elaborate on how you handled data consistency and fault tolerance in your distributed system? What specific strategies or technologies did you use?",
+      "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate has provided a specific example of a distributed system they worked on, mentioning the use of Python, microservices architecture with Docker, Redis for caching, and Prometheus with Grafana for monitoring. The explanation is relevant and shows some technical depth, but it lacks detailed discussion on data consistency and fault tolerance strategies.",
+        "next_utterance": "That's a good overview of your distributed system. To dive deeper, can you explain the specific strategies you used to ensure data consistency across your microservices, and how you handled potential faults or failures in the system?"
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "That's a good overview of your distributed system. To dive deeper, can you explain the specific strategies you used to ensure data consistency across your microservices, and how you handled potential faults or failures in the system?",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Given a complex software issue, describe your step-by-step approach to debugging and resolving it. What tools and techniques would you use?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Given a complex software issue, describe your step-by-step approach to debugging and resolving it. What tools and techniques would you use?",
+      "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate described a general approach to debugging complex software issues, mentioning analyzing requirements and designing a scalable solution. However, the response lacked specific details on the step-by-step debugging process and the tools or techniques used.",
+        "next_utterance": "Can you walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "Can you walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?",
+      "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate discussed their experience with debugging complex software issues, emphasizing the importance of testing and documentation. However, they didn't provide a specific instance or detailed step-by-step debugging process.",
+        "next_utterance": "That's a good overview of your general approach. Can you now walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "That's a good overview of your general approach. Can you now walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the trade-offs between using a microservices architecture versus a monolithic architecture for a large-scale software application. Provide examples from your experience."
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the trade-offs between using a microservices architecture versus a monolithic architecture for a large-scale software application. Provide examples from your experience.",
+      "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Analyze a given software system's performance bottleneck. How would you identify the root cause, and what optimizations would you propose?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Analyze a given software system's performance bottleneck. How would you identify the root cause, and what optimizations would you propose?",
+      "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "All topics covered - interview complete",
+        "next_utterance": "Thank you for your time today. That covers all the areas I wanted to discuss. Do you have any questions for me about the role or the company?"
+      }
+    },
+    {
+      "turn": 10,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+      }
+    },
+    {
+      "turn": 11,
+      "ai_question": "The Software Development Engineer team at Adobe is known for its collaborative and innovative culture. Currently, the team is facing challenges related to scaling our cloud-based services to meet the increasing demand for our Creative Cloud and Document Cloud products. We're also working to integrate emerging technologies like AI and machine learning into our products, which presents both technical and organizational challenges. Do you have any other questions?",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Microservices"
+    ],
+    "topic_repetition_detected": true,
+    "interview_completed_successfully": true,
+    "total_turns": 11,
+    "api_calls_made": 0
+  }
+}

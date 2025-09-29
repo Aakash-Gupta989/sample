@@ -1,0 +1,68 @@
+﻿About the job
+Leading the future in luxury electric and mobility
+
+At Lucid, we set out to introduce the most captivating, luxury electric vehicles that elevate the human experience and transcend the perceived limitations of space, performance, and intelligence. Vehicles that are intuitive, liberating, and designed for the future of mobility.
+
+We plan to lead in this new era of luxury electric by returning to the fundamentals of great design – where every decision we make is in service of the individual and environment. Because when you are no longer bound by convention, you are free to define your own experience.
+
+Come work alongside some of the most accomplished minds in the industry. Beyond providing competitive salaries, we’re providing a community for innovators who want to make an immediate and significant impact. If you are driven to create a better, more sustainable future, then this is the right place for you.
+
+We are seeking an experienced Senior Mechanical Design Engineer who will be responsible for designing, developing, and validating mechanical systems and enclosures for Advanced Driver-Assistance Systems (ADAS) system and other ECUs working with third-party suppliers. The ideal candidate will have a strong mechanical engineering background, expertise in automotive electronic packaging, and proven experience delivering innovative designs from concept to production.
+
+Key Responsibilities
+
+
+* Design and develop robust mechanical enclosures and brackets for ECU systems, ensuring accurate thermal management, and protection against environmental factors (e.g., vibration, shock, thermal cycling).
+* Collaborate closely with electrical engineering teams to optimize ECU housing designs, ensuring appropriate integration with electronic components, PCBs, and wiring harnesses.
+* Perform detailed 3D modeling and drafting using CATIA (V5 or V6) CAD software.
+* Conduct comprehensive tolerance stack-up analyses and apply GD&T principles to ensure manufacturing feasibility, functionality, and assembly accuracy.
+* Execute thermal, structural, and vibration simulations using CAE tools such as Ansys to validate designs against automotive industry standards.
+* Develop and oversee mechanical testing protocols, including shock, vibration, and thermal cycling, to confirm system robustness and reliability.
+* Evaluate and select appropriate materials and manufacturing processes (e.g., injection molding, die-casting, sheet metal stamping) to optimize quality, performance, manufacturability, and cost-efficiency.
+* Collaborate with suppliers and internal production teams to ensure designs are production-ready and support smooth transition into high-volume manufacturing.
+* Identify, troubleshoot, and resolve mechanical design issues in existing and prototype ECU products, driving continuous improvement in performance, reliability, and manufacturability.
+* Prepare comprehensive technical documentation, including Bill of Materials (BOM), detailed assembly drawings, and mechanical design specifications.
+* Participate actively in cross-functional meetings, effectively communicating design progress, risks, and improvement recommendations.
+
+Qualifications
+
+
+   * Bachelor's degree in Mechanical Engineering or similar technical field is required.
+   * 5+ years of mechanical design experience, specifically within automotive electronic component packaging.
+   * Strong proficiency in CATIA V5 or V6 CAD software.
+   * Proven expertise in automotive design standards, ASME GD&T, and tolerance stack-up analyses.
+   * Hands-on experience with plastic injection molding, sheet metal stamping, and die-casting manufacturing processes.
+   * Demonstrated knowledge of thermal management, structural integrity, vibration isolation, and EMC compliance in automotive electronic systems.
+   * Proficiency in CAE analysis tools, particularly Ansys, for thermal, mechanical, and vibration simulations.
+   * Excellent problem-solving skills, first-principles thinking, and analytical abilities.
+   * Effective communication and collaboration skills, capable of working cross-functionally within multidisciplinary teams.
+
+Preferred Qualifications
+
+
+      * Familiarity with automotive harnessing, electrical integration, and vehicle-level packaging constraints.
+      * Experience working with Tier 1 automotive suppliers and OEM manufacturing processes.
+      * Knowledge of automotive industry standards and certifications (e.g., UL, ISO, RoHS).
+      * Master’s degree or higher education is preferred.
+
+Additional Compensation and Benefits: Lucid offers a wide range of competitive benefits, including medical, dental, vision, life insurance, disability insurance, vacation, and 401k. The successful candidate may also be eligible to participate in Lucid’s equity program and/or a discretionary annual incentive program, subject to the rules governing such programs. (Cash or equity incentive awards, if any, will depend on various factors, including, without limitation, individual and company performance.)
+
+
+By Submitting your application, you understand and agree that your personal data will be processed in accordance with our Candidate Privacy Notice. If you are a California resident, please refer to our California Candidate Privacy Notice.
+
+
+To all recruitment agencies: Lucid Motors does not accept agency resumes. Please do not forward resumes to our careers alias or other Lucid Motors employees. Lucid Motors is not responsible for any fees related to unsolicited resumes.
+Benefits found in job post
+         * Disability insurance
+About the company
+ Lucid Motors company logo 
+
+Lucid Motors
+561,208 followers
+Following
+Motor Vehicle Manufacturing  1,001-5,000 employees  7,312 on LinkedIn
+We launched Lucid in 2016 to build the world’s best cars and accelerate the shift to clean energy. Our vehicles deliver best-in-class performance *and* efficiency. Equally important, we’re building a world-class team: From our state-of-the-art factory in Arizona to our global headquarters in California’s Silicon Valley, we’re recruiting high-performing people who want to help decarbonize Earth. Join us!
+…show more
+Interested in working with us in the future?
+Members who share that they’re interested in a company may be 2x as likely to get a message from a recruiter than those who don’t. Learn more
+Learn more about Interested in working for our company

@@ -1,0 +1,139 @@
+{
+  "test_metadata": {
+    "resume_file": "aarshee_software_resume.txt",
+    "job_description": "software_developer_jd.txt",
+    "interview_type": "technical_behavioral",
+    "test_timestamp": "2025-09-28T19:04:25.039481",
+    "max_turns": 12,
+    "total_duration": "132.08 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 1,
+    "behavioral_questions_count": 0,
+    "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear you're excited about the opportunity! To better understand your fit for the Software Development Engineer role, can you elaborate on your background and experience in software development?",
+      "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was quite generic, stating they have experience with various technical projects and have worked on several challenging problems. While this indicates some level of experience, it lacks specific details about their background and experience in software development, which is what was asked.",
+        "next_utterance": "That's a good start, but can you be more specific about the technical projects you've worked on and the challenging problems you've faced? For instance, what programming languages or technologies did you use, and how did you approach solving those challenging problems?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "That's a good start, but can you be more specific about the technical projects you've worked on and the challenging problems you've faced? For instance, what programming languages or technologies did you use, and how did you approach solving those challenging problems?",
+      "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate provided a specific example of a recent project, mentioning the development of a distributed system using Python and implementing microservices architecture with Docker containers. This answer is relevant and provides some technical details, but it lacks depth regarding the challenges faced, the design decisions made, and the outcomes of the project.",
+        "next_utterance": "That's a great example of a complex project. Can you delve deeper into the design decisions behind choosing a microservices architecture? What were some of the key considerations, and how did you handle potential issues like service communication or data consistency?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "That's a great example of a complex project. Can you delve deeper into the design decisions behind choosing a microservices architecture? What were some of the key considerations, and how did you handle potential issues like service communication or data consistency?",
+      "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered."
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered.",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Software Development Engineer role?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Software Development Engineer role?",
+      "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer was somewhat generic, stating they have 'solid experience' with designing solutions for typical challenges in the Software Development Engineer role and that they typically start by analyzing requirements and designing a scalable solution. However, they did not provide specific details or examples to support their claim.",
+        "next_utterance": "That's a good start, but can you provide a concrete example from your past experience where you had to design a scalable solution? What were the specific requirements, and how did you ensure the solution was scalable?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "That's a good start, but can you provide a concrete example from your past experience where you had to design a scalable solution? What were the specific requirements, and how did you ensure the solution was scalable?",
+      "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer repeated their previous response about the importance of testing and documentation without providing a concrete example of designing a scalable solution as requested. The answer did not directly address the question asked.",
+        "next_utterance": "I appreciate your emphasis on testing and documentation, but I'd like to focus on the scalability aspect. Can you provide a specific instance where you designed a system to handle increased load or demand, and what strategies you used to ensure it scaled effectively?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "I appreciate your emphasis on testing and documentation, but I'd like to focus on the scalability aspect. Can you provide a specific instance where you designed a system to handle increased load or demand, and what strategies you used to ensure it scaled effectively?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?"
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?",
+      "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer repeated their previous statement about understanding trade-offs and optimizing for performance and maintainability, without providing a specific instance or deeper insight into scalability as requested. The answer did not directly address the request for a concrete example of designing a scalable solution.",
+        "next_utterance": "I appreciate your understanding of trade-offs, but I'd like to focus on a specific example. Can you describe a particular instance where you had to scale a system to meet growing demands, and what specific strategies you employed to achieve that scalability?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "I appreciate your understanding of trade-offs, but I'd like to focus on a specific example. Can you describe a particular instance where you had to scale a system to meet growing demands, and what specific strategies you employed to achieve that scalability?",
+      "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "The candidate's last answer highlighted their experience in mentoring other engineers and contributing to internal documentation and training materials. While this shows their ability in knowledge sharing and leadership, it doesn't directly address the specific question about scaling a system to meet growing demands. The answer was somewhat evasive as it didn't provide the concrete example requested.",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+      }
+    },
+    {
+      "turn": 10,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+      }
+    },
+    {
+      "turn": 11,
+      "ai_question": "Our Software Development Engineer team at Adobe fosters a collaborative environment where innovation thrives. Currently, the team is tackling complex challenges related to scaling our cloud-based services and integrating AI-driven features into our products. One of the biggest challenges is ensuring seamless performance and reliability as we continue to expand our offerings. We're addressing these challenges through ongoing innovation and professional development opportunities.\n\nDo you have any other questions?",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Microservices",
+      "Communication"
+    ],
+    "topic_repetition_detected": true,
+    "interview_completed_successfully": true,
+    "total_turns": 11,
+    "api_calls_made": 0
+  }
+}

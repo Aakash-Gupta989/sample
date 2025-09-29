@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: prepandhire-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://prepandhire.netlify.app,https://prepandhire.com
+      - key: BACKEND_PORT
+        value: 8000

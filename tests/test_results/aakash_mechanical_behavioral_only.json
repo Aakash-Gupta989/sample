@@ -1,0 +1,138 @@
+{
+  "test_metadata": {
+    "resume_file": "aakash_mechanical_resume.txt",
+    "job_description": "mechanical_engineer_jd.txt",
+    "interview_type": "behavioral_only",
+    "test_timestamp": "2025-09-28T18:55:11.769528",
+    "max_turns": 12,
+    "total_duration": "101.22 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 0,
+    "behavioral_questions_count": 3,
+    "interview_type_routing": "CORRECT"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear you're excited about the role! Can you tell me about a specific project or experience that you think makes you a strong fit for this Senior Mechanical Design Engineer position at Lucid Motors?",
+      "mock_answer": "I have experience working in teams and have handled various challenging situations in my career.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's response was very general and lacked specific details about their personal contribution and experiences. They mentioned having experience working in teams and handling challenging situations, but did not provide a structured STAR story.",
+        "next_utterance": "That's a good start. Can you tell me about a specific instance where you had to handle a challenging situation? What was the situation, what actions did you take, and what was the outcome?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "That's a good start. Can you tell me about a specific instance where you had to handle a challenging situation? What was the situation, what actions did you take, and what was the outcome?",
+      "mock_answer": "In one specific situation, I led a cross-functional team of 5 people to deliver a critical project under tight deadlines.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate started to describe a situation where they led a cross-functional team, which is a good start. However, they didn't complete the STAR story by detailing their specific actions and the outcome. The use of 'I led' is a good indication of personal involvement, but the story is incomplete.",
+        "next_utterance": "That's a great start! You mentioned leading a cross-functional team of 5 people. Can you elaborate on the specific actions you took to ensure the project was delivered under tight deadlines, and what was the final outcome?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "That's a great start! You mentioned leading a cross-functional team of 5 people. Can you elaborate on the specific actions you took to ensure the project was delivered under tight deadlines, and what was the final outcome?",
+      "mock_answer": "I organized daily standups, facilitated conflict resolution between team members, and implemented a new communication process that improved team efficiency by 30%. The project was delivered on time and under budget.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a challenging goal. What was your role, and how did you contribute to the team's success?"
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a challenging goal. What was your role, and how did you contribute to the team's success?",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the outcomes?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the outcomes?",
+      "mock_answer": "I've handled similar situations before. My approach is to first understand all stakeholders' perspectives, then develop a structured plan with clear milestones and regular check-ins.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate described a general approach to leading a project, but didn't provide a specific example or outcome, missing key elements of the STAR method.",
+        "next_utterance": "That's a great general approach. Can you tell me about a specific instance where you applied this approach? What was the situation, and what was the outcome?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "That's a great general approach. Can you tell me about a specific instance where you applied this approach? What was the situation, and what was the outcome?",
+      "mock_answer": "Communication is key in these situations. I make sure to keep all stakeholders informed and create transparent processes that everyone can follow and understand.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate repeated a general statement about the importance of communication and transparency without providing a specific example or outcome. This indicates a lack of a concrete STAR story.",
+        "next_utterance": "That's a great point about communication being key. Can you give me a specific instance where you applied this approach and what the results were?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "That's a great point about communication being key. Can you give me a specific instance where you applied this approach and what the results were?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Can you tell me about a time when you encountered a complex technical problem that required creative problem-solving? How did you approach it, and what was the outcome?"
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Can you tell me about a time when you encountered a complex technical problem that required creative problem-solving? How did you approach it, and what was the outcome?",
+      "mock_answer": "I have strong experience in this area. I've successfully managed similar challenges by building consensus among team members, setting clear expectations, and ensuring everyone has the resources they need to succeed.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate described a general approach to managing complex technical problems, but didn't provide a specific instance or outcome. They used phrases like 'I've successfully managed similar challenges,' which indicates they have relevant experience, but the answer lacks a clear STAR story.",
+        "next_utterance": "That's a great general approach. Can you tell me about a specific instance where you applied this approach to manage a complex technical problem? What was the situation, and what was the outcome?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "That's a great general approach. Can you tell me about a specific instance where you applied this approach to manage a complex technical problem? What was the situation, and what was the outcome?",
+      "mock_answer": "Beyond just managing the situation, I've also worked to improve our processes to prevent similar issues in the future. I believe in continuous improvement and learning from every experience.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "The candidate's last answer continued to describe a general approach to problem-solving and process improvement without providing a specific instance or measurable outcome. They mentioned working to improve processes and prevent future issues, but did not give a concrete example using the STAR method.",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 10,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 11,
+      "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on pushing the boundaries of electric vehicle technology. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive projects forward. The team is currently facing challenges related to scaling up production while maintaining high-quality standards, and we're looking for talented engineers like you to help us overcome these hurdles. Do you have any other questions?",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Communication"
+    ],
+    "topic_repetition_detected": true,
+    "interview_completed_successfully": true,
+    "total_turns": 11,
+    "api_calls_made": 0
+  }
+}

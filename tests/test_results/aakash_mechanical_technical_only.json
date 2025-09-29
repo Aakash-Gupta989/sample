@@ -1,0 +1,118 @@
+{
+  "test_metadata": {
+    "resume_file": "aakash_mechanical_resume.txt",
+    "job_description": "mechanical_engineer_jd.txt",
+    "interview_type": "technical_only",
+    "test_timestamp": "2025-09-28T18:52:56.682843",
+    "max_turns": 12,
+    "total_duration": "105.08 seconds"
+  },
+  "blueprint_validation": {
+    "technical_questions_count": 1,
+    "behavioral_questions_count": 0,
+    "interview_type_routing": "CORRECT"
+  },
+  "conversation_flow": [
+    {
+      "turn": 1,
+      "ai_question": "That's great to hear you're excited about the opportunity. Can you elaborate on your relevant background and experience for the Senior Mechanical Design Engineer role, and what specifically draws you to Lucid Motors?",
+      "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate has provided a general overview of their experience with technical projects and problem-solving, but lacks specific details about their background and experience relevant to the Senior Mechanical Design Engineer role at Lucid Motors.",
+        "next_utterance": "Can you provide specific examples of challenging problems you've worked on in your previous roles and how they relate to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?"
+      }
+    },
+    {
+      "turn": 2,
+      "ai_question": "Can you provide specific examples of challenging problems you've worked on in your previous roles and how they relate to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?",
+      "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate mentioned working on a distributed system using Python and implementing microservices architecture with Docker containers. However, the context of the Senior Mechanical Design Engineer role at Lucid Motors seems unrelated to the candidate's mentioned experience with software development and containerization. The answer doesn't directly address the mechanical design aspects or the specific challenges related to the role.",
+        "next_utterance": "That's an interesting experience with distributed systems, but I'm having trouble understanding how it relates to mechanical design engineering. Can you explain how your experience with software development and containerization might apply to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?"
+      }
+    },
+    {
+      "turn": 3,
+      "ai_question": "That's an interesting experience with distributed systems, but I'm having trouble understanding how it relates to mechanical design engineering. Can you explain how your experience with software development and containerization might apply to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?",
+      "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+      "ai_conductor_decision": {
+        "chosen_action": "TRANSITION",
+        "analysis": "Forced transition to prevent repetitive questioning",
+        "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered."
+      }
+    },
+    {
+      "turn": 4,
+      "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered.",
+      "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "Candidate conceded - pivoted to next topic area",
+        "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Senior Mechanical Design Engineer role?"
+      }
+    },
+    {
+      "turn": 5,
+      "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Senior Mechanical Design Engineer role?",
+      "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+      "ai_conductor_decision": {
+        "chosen_action": "DEEPEN",
+        "analysis": "The candidate has provided a general overview of their approach to designing a solution for a typical challenge in the Senior Mechanical Design Engineer role, mentioning that they analyze requirements and design a scalable solution. However, the answer lacks specific details about the challenge or the design process.",
+        "next_utterance": "Can you walk me through a specific example of how you analyzed the requirements and designed a scalable solution for a mechanical design challenge you've faced in the past?"
+      }
+    },
+    {
+      "turn": 6,
+      "ai_question": "Can you walk me through a specific example of how you analyzed the requirements and designed a scalable solution for a mechanical design challenge you've faced in the past?",
+      "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+      "ai_conductor_decision": {
+        "chosen_action": "CHALLENGE",
+        "analysis": "The candidate's last answer focused on testing and documentation, which, while important, doesn't directly address the mechanical design challenge or the specific example requested. The answer seems to be more related to software development practices rather than mechanical design engineering.",
+        "next_utterance": "I appreciate your emphasis on testing and documentation. However, I'm still looking for a specific example related to a mechanical design challenge. Can you provide an example from your experience where you had to design a mechanical component or system, and walk me through your thought process and the steps you took?"
+      }
+    },
+    {
+      "turn": 7,
+      "ai_question": "I appreciate your emphasis on testing and documentation. However, I'm still looking for a specific example related to a mechanical design challenge. Can you provide an example from your experience where you had to design a mechanical component or system, and walk me through your thought process and the steps you took?",
+      "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+      "ai_conductor_decision": {
+        "chosen_action": "CONCEDE_AND_PIVOT",
+        "analysis": "All topics covered - interview complete",
+        "next_utterance": "Thank you for your time today. That covers all the areas I wanted to discuss. Do you have any questions for me about the role or the company?"
+      }
+    },
+    {
+      "turn": 8,
+      "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+      "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA",
+        "analysis": "Transitioning to company Q&A phase",
+        "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+      }
+    },
+    {
+      "turn": 9,
+      "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on pushing the boundaries of electric vehicle technology. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive product development and overcome complex engineering challenges. The team is currently facing challenges related to scaling up production while maintaining high-quality standards and innovating new design solutions to stay ahead in the competitive EV market. Do you have any other questions?",
+      "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+      "ai_conductor_decision": {
+        "chosen_action": "COMPANY_QNA_COMPLETE",
+        "analysis": "Company Q&A phase completed",
+        "next_utterance": "Thank you for your time today!"
+      }
+    }
+  ],
+  "test_results": {
+    "status": "PASS",
+    "errors": [],
+    "topics_covered": [
+      "Mechanical Design"
+    ],
+    "topic_repetition_detected": false,
+    "interview_completed_successfully": true,
+    "total_turns": 9,
+    "api_calls_made": 0
+  }
+}

@@ -1,0 +1,820 @@
+{
+  "test_summary": {
+    "total_tests": 6,
+    "passed_tests": 6,
+    "failed_tests": 0,
+    "success_rate": "100.0%"
+  },
+  "individual_results": {
+    "aakash_mechanical_technical_only": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "technical_only",
+        "test_timestamp": "2025-09-28T18:52:56.682843",
+        "max_turns": 12,
+        "total_duration": "105.08 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear you're excited about the opportunity. Can you elaborate on your relevant background and experience for the Senior Mechanical Design Engineer role, and what specifically draws you to Lucid Motors?",
+          "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate has provided a general overview of their experience with technical projects and problem-solving, but lacks specific details about their background and experience relevant to the Senior Mechanical Design Engineer role at Lucid Motors.",
+            "next_utterance": "Can you provide specific examples of challenging problems you've worked on in your previous roles and how they relate to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "Can you provide specific examples of challenging problems you've worked on in your previous roles and how they relate to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?",
+          "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate mentioned working on a distributed system using Python and implementing microservices architecture with Docker containers. However, the context of the Senior Mechanical Design Engineer role at Lucid Motors seems unrelated to the candidate's mentioned experience with software development and containerization. The answer doesn't directly address the mechanical design aspects or the specific challenges related to the role.",
+            "next_utterance": "That's an interesting experience with distributed systems, but I'm having trouble understanding how it relates to mechanical design engineering. Can you explain how your experience with software development and containerization might apply to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "That's an interesting experience with distributed systems, but I'm having trouble understanding how it relates to mechanical design engineering. Can you explain how your experience with software development and containerization might apply to the responsibilities of a Senior Mechanical Design Engineer at Lucid Motors?",
+          "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered."
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered.",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Senior Mechanical Design Engineer role?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Senior Mechanical Design Engineer role?",
+          "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate has provided a general overview of their approach to designing a solution for a typical challenge in the Senior Mechanical Design Engineer role, mentioning that they analyze requirements and design a scalable solution. However, the answer lacks specific details about the challenge or the design process.",
+            "next_utterance": "Can you walk me through a specific example of how you analyzed the requirements and designed a scalable solution for a mechanical design challenge you've faced in the past?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "Can you walk me through a specific example of how you analyzed the requirements and designed a scalable solution for a mechanical design challenge you've faced in the past?",
+          "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer focused on testing and documentation, which, while important, doesn't directly address the mechanical design challenge or the specific example requested. The answer seems to be more related to software development practices rather than mechanical design engineering.",
+            "next_utterance": "I appreciate your emphasis on testing and documentation. However, I'm still looking for a specific example related to a mechanical design challenge. Can you provide an example from your experience where you had to design a mechanical component or system, and walk me through your thought process and the steps you took?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "I appreciate your emphasis on testing and documentation. However, I'm still looking for a specific example related to a mechanical design challenge. Can you provide an example from your experience where you had to design a mechanical component or system, and walk me through your thought process and the steps you took?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "All topics covered - interview complete",
+            "next_utterance": "Thank you for your time today. That covers all the areas I wanted to discuss. Do you have any questions for me about the role or the company?"
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on pushing the boundaries of electric vehicle technology. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive product development and overcome complex engineering challenges. The team is currently facing challenges related to scaling up production while maintaining high-quality standards and innovating new design solutions to stay ahead in the competitive EV market. Do you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [
+          "Mechanical Design"
+        ],
+        "topic_repetition_detected": false,
+        "interview_completed_successfully": true,
+        "total_turns": 9,
+        "api_calls_made": 0
+      }
+    },
+    "aakash_mechanical_behavioral_only": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "behavioral_only",
+        "test_timestamp": "2025-09-28T18:55:11.769528",
+        "max_turns": 12,
+        "total_duration": "101.22 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 0,
+        "behavioral_questions_count": 3,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear you're excited about the role! Can you tell me about a specific project or experience that you think makes you a strong fit for this Senior Mechanical Design Engineer position at Lucid Motors?",
+          "mock_answer": "I have experience working in teams and have handled various challenging situations in my career.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's response was very general and lacked specific details about their personal contribution and experiences. They mentioned having experience working in teams and handling challenging situations, but did not provide a structured STAR story.",
+            "next_utterance": "That's a good start. Can you tell me about a specific instance where you had to handle a challenging situation? What was the situation, what actions did you take, and what was the outcome?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "That's a good start. Can you tell me about a specific instance where you had to handle a challenging situation? What was the situation, what actions did you take, and what was the outcome?",
+          "mock_answer": "In one specific situation, I led a cross-functional team of 5 people to deliver a critical project under tight deadlines.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate started to describe a situation where they led a cross-functional team, which is a good start. However, they didn't complete the STAR story by detailing their specific actions and the outcome. The use of 'I led' is a good indication of personal involvement, but the story is incomplete.",
+            "next_utterance": "That's a great start! You mentioned leading a cross-functional team of 5 people. Can you elaborate on the specific actions you took to ensure the project was delivered under tight deadlines, and what was the final outcome?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "That's a great start! You mentioned leading a cross-functional team of 5 people. Can you elaborate on the specific actions you took to ensure the project was delivered under tight deadlines, and what was the final outcome?",
+          "mock_answer": "I organized daily standups, facilitated conflict resolution between team members, and implemented a new communication process that improved team efficiency by 30%. The project was delivered on time and under budget.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a challenging goal. What was your role, and how did you contribute to the team's success?"
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a challenging goal. What was your role, and how did you contribute to the team's success?",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the outcomes?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the outcomes?",
+          "mock_answer": "I've handled similar situations before. My approach is to first understand all stakeholders' perspectives, then develop a structured plan with clear milestones and regular check-ins.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate described a general approach to leading a project, but didn't provide a specific example or outcome, missing key elements of the STAR method.",
+            "next_utterance": "That's a great general approach. Can you tell me about a specific instance where you applied this approach? What was the situation, and what was the outcome?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "That's a great general approach. Can you tell me about a specific instance where you applied this approach? What was the situation, and what was the outcome?",
+          "mock_answer": "Communication is key in these situations. I make sure to keep all stakeholders informed and create transparent processes that everyone can follow and understand.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate repeated a general statement about the importance of communication and transparency without providing a specific example or outcome. This indicates a lack of a concrete STAR story.",
+            "next_utterance": "That's a great point about communication being key. Can you give me a specific instance where you applied this approach and what the results were?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "That's a great point about communication being key. Can you give me a specific instance where you applied this approach and what the results were?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Can you tell me about a time when you encountered a complex technical problem that required creative problem-solving? How did you approach it, and what was the outcome?"
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Can you tell me about a time when you encountered a complex technical problem that required creative problem-solving? How did you approach it, and what was the outcome?",
+          "mock_answer": "I have strong experience in this area. I've successfully managed similar challenges by building consensus among team members, setting clear expectations, and ensuring everyone has the resources they need to succeed.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate described a general approach to managing complex technical problems, but didn't provide a specific instance or outcome. They used phrases like 'I've successfully managed similar challenges,' which indicates they have relevant experience, but the answer lacks a clear STAR story.",
+            "next_utterance": "That's a great general approach. Can you tell me about a specific instance where you applied this approach to manage a complex technical problem? What was the situation, and what was the outcome?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "That's a great general approach. Can you tell me about a specific instance where you applied this approach to manage a complex technical problem? What was the situation, and what was the outcome?",
+          "mock_answer": "Beyond just managing the situation, I've also worked to improve our processes to prevent similar issues in the future. I believe in continuous improvement and learning from every experience.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "The candidate's last answer continued to describe a general approach to problem-solving and process improvement without providing a specific instance or measurable outcome. They mentioned working to improve processes and prevent future issues, but did not give a concrete example using the STAR method.",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+          }
+        },
+        {
+          "turn": 10,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+          }
+        },
+        {
+          "turn": 11,
+          "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on pushing the boundaries of electric vehicle technology. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive projects forward. The team is currently facing challenges related to scaling up production while maintaining high-quality standards, and we're looking for talented engineers like you to help us overcome these hurdles. Do you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [
+          "Communication"
+        ],
+        "topic_repetition_detected": true,
+        "interview_completed_successfully": true,
+        "total_turns": 11,
+        "api_calls_made": 0
+      }
+    },
+    "aakash_mechanical_technical_behavioral": {
+      "test_metadata": {
+        "resume_file": "aakash_mechanical_resume.txt",
+        "job_description": "mechanical_engineer_jd.txt",
+        "interview_type": "technical_behavioral",
+        "test_timestamp": "2025-09-28T18:57:22.992504",
+        "max_turns": 12,
+        "total_duration": "131.15 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 0,
+        "behavioral_questions_count": 1,
+        "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear you're excited about the opportunity! To better understand your fit for the Senior Mechanical Design Engineer role, can you tell me about a specific project where you applied your mechanical design skills and what your role was in that project?",
+          "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer was generic and did not provide specific details about their mechanical design skills or their role in a particular project. The answer lacked the specific evidence and examples that would demonstrate their experience and expertise.",
+            "next_utterance": "That's great that you've worked on various technical projects and challenging problems. To better understand your mechanical design skills, can you describe a specific project where you applied your expertise and quantify the impact it had, such as efficiency improvements or cost reductions?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "That's great that you've worked on various technical projects and challenging problems. To better understand your mechanical design skills, can you describe a specific project where you applied your expertise and quantify the impact it had, such as efficiency improvements or cost reductions?",
+          "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer deviated from the topic of mechanical design skills and instead discussed a project involving Python and microservices architecture. This does not directly address the question about mechanical design skills and quantifying the impact of their work.",
+            "next_utterance": "I appreciate you sharing your experience with distributed systems, but I'd like to refocus on mechanical design. Can you describe a specific mechanical design project you worked on and quantify the impact it had, such as efficiency improvements or cost reductions?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "I appreciate you sharing your experience with distributed systems, but I'd like to refocus on mechanical design. Can you describe a specific mechanical design project you worked on and quantify the impact it had, such as efficiency improvements or cost reductions?",
+          "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Your resume mentions you led the development of IP68-rated enclosures at John Deere from ideation to mass production. Can you walk me through the most significant technical challenge you faced in achieving that IP68 rating?"
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Your resume mentions you led the development of IP68-rated enclosures at John Deere from ideation to mass production. Can you walk me through the most significant technical challenge you faced in achieving that IP68 rating?",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Imagine you're tasked with designing a new battery enclosure for an electric vehicle. The requirement is to minimize weight while maintaining structural integrity and thermal performance. How would you approach this challenge, and what tools or methodologies would you use?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Imagine you're tasked with designing a new battery enclosure for an electric vehicle. The requirement is to minimize weight while maintaining structural integrity and thermal performance. How would you approach this challenge, and what tools or methodologies would you use?",
+          "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer was generic and lacked specific details about their approach to designing a battery enclosure for an electric vehicle. They mentioned analyzing requirements and designing a scalable solution but did not provide concrete examples or methodologies used.",
+            "next_utterance": "That's a good start, but I'd like more specifics. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "That's a good start, but I'd like more specifics. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use?",
+          "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer was generic and did not directly address the specific question about designing a battery enclosure for an electric vehicle, minimizing weight while maintaining structural integrity and thermal performance. The candidate mentioned that proper testing and documentation are crucial but did not provide the specific details or examples requested.",
+            "next_utterance": "I appreciate your emphasis on testing and documentation. However, I'd like to refocus on the specific challenge of designing a battery enclosure. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use to achieve this balance?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "I appreciate your emphasis on testing and documentation. However, I'd like to refocus on the specific challenge of designing a battery enclosure. Can you describe a particular project where you had to balance weight, structural integrity, and thermal performance in a battery enclosure design? What specific tools or simulation techniques did you use to achieve this balance?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer did not provide specific details about designing a battery enclosure, instead expressing a desire to discuss other aspects of the role. This indicates a lack of willingness to engage with the specific technical challenge presented.",
+            "next_utterance": "I understand you'd like to discuss other areas, but I'd like to revisit the question about designing a battery enclosure for an electric vehicle. Can you describe a specific project where you had to balance weight, structural integrity, and thermal performance? What tools or methodologies did you use?"
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "I understand you'd like to discuss other areas, but I'd like to revisit the question about designing a battery enclosure for an electric vehicle. Can you describe a specific project where you had to balance weight, structural integrity, and thermal performance? What tools or methodologies did you use?",
+          "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?",
+          "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "The candidate's last answer did not directly address the question about designing a battery enclosure for an electric vehicle. Instead, they mentioned mentoring other engineers and contributing to internal documentation and training materials, which is not relevant to the specific technical question asked.",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+          }
+        },
+        {
+          "turn": 10,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Lucid Motors?"
+          }
+        },
+        {
+          "turn": 11,
+          "ai_question": "At Lucid Motors, our team culture is collaborative and innovative, with a focus on delivering exceptional electric vehicles. As a Senior Mechanical Design Engineer, you'll be working closely with cross-functional teams to drive product development. Currently, our team is focused on scaling production and addressing complex engineering challenges, such as optimizing battery performance and improving vehicle aerodynamics. Do you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [
+          "Thermal",
+          "Enclosure",
+          "Mechanical Design"
+        ],
+        "topic_repetition_detected": true,
+        "interview_completed_successfully": true,
+        "total_turns": 11,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_technical_only": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "technical_only",
+        "test_timestamp": "2025-09-28T19:00:04.152354",
+        "max_turns": 12,
+        "total_duration": "99.85 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 5,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear about your enthusiasm for the role. Let's dive into the technical aspects. Design a scalable data processing system that can handle a high volume of concurrent requests. How would you ensure its reliability and performance?",
+          "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's response was too general and didn't directly address the question about designing a scalable data processing system. It lacked specific technical details and examples.",
+            "next_utterance": "That's an interesting start. To dive deeper, can you walk me through a specific example of a scalable data processing system you've designed or worked on? What were some of the key challenges you faced, and how did you address them?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "That's an interesting start. To dive deeper, can you walk me through a specific example of a scalable data processing system you've designed or worked on? What were some of the key challenges you faced, and how did you address them?",
+          "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate mentioned working on a distributed system using Python and microservices architecture with Docker containers. This indicates some experience with scalable systems, but the details are still general. The topic of 'scalable data processing system' is 'COVERED_GENERALLY'.",
+            "next_utterance": "That's a good start. Can you elaborate on how you handled data consistency and fault tolerance in your distributed system? What specific strategies or technologies did you use?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "That's a good start. Can you elaborate on how you handled data consistency and fault tolerance in your distributed system? What specific strategies or technologies did you use?",
+          "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate has provided a specific example of a distributed system they worked on, mentioning the use of Python, microservices architecture with Docker, Redis for caching, and Prometheus with Grafana for monitoring. The explanation is relevant and shows some technical depth, but it lacks detailed discussion on data consistency and fault tolerance strategies.",
+            "next_utterance": "That's a good overview of your distributed system. To dive deeper, can you explain the specific strategies you used to ensure data consistency across your microservices, and how you handled potential faults or failures in the system?"
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "That's a good overview of your distributed system. To dive deeper, can you explain the specific strategies you used to ensure data consistency across your microservices, and how you handled potential faults or failures in the system?",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Given a complex software issue, describe your step-by-step approach to debugging and resolving it. What tools and techniques would you use?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Given a complex software issue, describe your step-by-step approach to debugging and resolving it. What tools and techniques would you use?",
+          "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate described a general approach to debugging complex software issues, mentioning analyzing requirements and designing a scalable solution. However, the response lacked specific details on the step-by-step debugging process and the tools or techniques used.",
+            "next_utterance": "Can you walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "Can you walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?",
+          "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate discussed their experience with debugging complex software issues, emphasizing the importance of testing and documentation. However, they didn't provide a specific instance or detailed step-by-step debugging process.",
+            "next_utterance": "That's a good overview of your general approach. Can you now walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "That's a good overview of your general approach. Can you now walk me through a specific instance where you had to debug a complex software issue? What were the symptoms, and how did you isolate the problem?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the trade-offs between using a microservices architecture versus a monolithic architecture for a large-scale software application. Provide examples from your experience."
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Discuss the trade-offs between using a microservices architecture versus a monolithic architecture for a large-scale software application. Provide examples from your experience.",
+          "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Analyze a given software system's performance bottleneck. How would you identify the root cause, and what optimizations would you propose?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Analyze a given software system's performance bottleneck. How would you identify the root cause, and what optimizations would you propose?",
+          "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "All topics covered - interview complete",
+            "next_utterance": "Thank you for your time today. That covers all the areas I wanted to discuss. Do you have any questions for me about the role or the company?"
+          }
+        },
+        {
+          "turn": 10,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+          }
+        },
+        {
+          "turn": 11,
+          "ai_question": "The Software Development Engineer team at Adobe is known for its collaborative and innovative culture. Currently, the team is facing challenges related to scaling our cloud-based services to meet the increasing demand for our Creative Cloud and Document Cloud products. We're also working to integrate emerging technologies like AI and machine learning into our products, which presents both technical and organizational challenges. Do you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [
+          "Microservices"
+        ],
+        "topic_repetition_detected": true,
+        "interview_completed_successfully": true,
+        "total_turns": 11,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_behavioral_only": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "behavioral_only",
+        "test_timestamp": "2025-09-28T19:02:14.010523",
+        "max_turns": 12,
+        "total_duration": "101.02 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 0,
+        "behavioral_questions_count": 3,
+        "interview_type_routing": "CORRECT"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear you're excited about the opportunity! Can you tell me about a specific project you've worked on in the past where you had to apply your technical skills? I'd love to hear about your role, the actions you took, and the outcome.",
+          "mock_answer": "I have experience working in teams and have handled various challenging situations in my career.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's response was very general and lacked specific details about their personal contribution, the actions they took, or the results they achieved in a particular project. The answer did not follow the STAR method.",
+            "next_utterance": "I'd love to hear about a specific instance where you applied your technical skills. Can you describe a project where you had to use your technical expertise, the specific actions you took, and the outcome of your efforts?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "I'd love to hear about a specific instance where you applied your technical skills. Can you describe a project where you had to use your technical expertise, the specific actions you took, and the outcome of your efforts?",
+          "mock_answer": "In one specific situation, I led a cross-functional team of 5 people to deliver a critical project under tight deadlines.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate started to describe a situation where they led a cross-functional team, which is a good start. However, they didn't complete the story by explaining the specific actions they took or the outcome of their efforts. The answer is incomplete as it lacks the 'Action' and 'Result' parts of the STAR method.",
+            "next_utterance": "That's a great start! You mentioned leading a cross-functional team. Can you tell me more about the specific actions you took to ensure the project was delivered on time, and what was the outcome of your efforts?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "That's a great start! You mentioned leading a cross-functional team. Can you tell me more about the specific actions you took to ensure the project was delivered on time, and what was the outcome of your efforts?",
+          "mock_answer": "I organized daily standups, facilitated conflict resolution between team members, and implemented a new communication process that improved team efficiency by 30%. The project was delivered on time and under budget.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a common goal. What was your role, and how did you contribute to the team's success?"
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a project where you had to work closely with a cross-functional team to achieve a common goal. What was your role, and how did you contribute to the team's success?",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the results?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Describe a situation where you took the lead on a project or initiative. What steps did you take to ensure its success, and what were the results?",
+          "mock_answer": "I've handled similar situations before. My approach is to first understand all stakeholders' perspectives, then develop a structured plan with clear milestones and regular check-ins.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate described a general approach to leading a project, but didn't provide a specific example or outcome, missing key elements of the STAR method.",
+            "next_utterance": "That's a great general approach. Can you describe a specific situation where you applied this approach, and what was the outcome of your efforts?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "That's a great general approach. Can you describe a specific situation where you applied this approach, and what was the outcome of your efforts?",
+          "mock_answer": "Communication is key in these situations. I make sure to keep all stakeholders informed and create transparent processes that everyone can follow and understand.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate described a general approach to handling a situation but didn't provide a specific example or outcome. They emphasized the importance of communication and transparency but didn't directly tie it back to a personal experience or result.",
+            "next_utterance": "That's a great general approach. Can you describe a specific situation where you applied this approach, the actions you personally took, and the outcome of your efforts?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "That's a great general approach. Can you describe a specific situation where you applied this approach, the actions you personally took, and the outcome of your efforts?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Tell me about a time when you encountered a complex technical problem. How did you approach it, and what was the outcome?"
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Tell me about a time when you encountered a complex technical problem. How did you approach it, and what was the outcome?",
+          "mock_answer": "I have strong experience in this area. I've successfully managed similar challenges by building consensus among team members, setting clear expectations, and ensuring everyone has the resources they need to succeed.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate described a general approach to managing complex technical problems, but didn't provide a specific example or outcome. They used phrases like 'I've successfully managed similar challenges' without detailing a particular situation or their personal actions.",
+            "next_utterance": "That's a great general approach. Can you describe a specific situation where you applied this approach, the actions you personally took, and the outcome of your efforts?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "That's a great general approach. Can you describe a specific situation where you applied this approach, the actions you personally took, and the outcome of your efforts?",
+          "mock_answer": "Beyond just managing the situation, I've also worked to improve our processes to prevent similar issues in the future. I believe in continuous improvement and learning from every experience.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "The candidate provided a general statement about their approach to improving processes and learning from experiences, but did not describe a specific situation, their actions, or the outcome.",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+          }
+        },
+        {
+          "turn": 10,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+          }
+        },
+        {
+          "turn": 11,
+          "ai_question": "At Adobe, our Software Development Engineer team is known for its collaborative and innovative culture. The team is currently working on several exciting projects, and some of the biggest challenges they're facing include staying up-to-date with the latest technological advancements and managing the complexity of our products. To address these challenges, we provide ongoing training and opportunities for professional growth, as well as encourage cross-functional collaboration and knowledge sharing. Do you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [],
+        "topic_repetition_detected": true,
+        "interview_completed_successfully": true,
+        "total_turns": 11,
+        "api_calls_made": 0
+      }
+    },
+    "aarshee_software_technical_behavioral": {
+      "test_metadata": {
+        "resume_file": "aarshee_software_resume.txt",
+        "job_description": "software_developer_jd.txt",
+        "interview_type": "technical_behavioral",
+        "test_timestamp": "2025-09-28T19:04:25.039481",
+        "max_turns": 12,
+        "total_duration": "132.08 seconds"
+      },
+      "blueprint_validation": {
+        "technical_questions_count": 1,
+        "behavioral_questions_count": 0,
+        "interview_type_routing": "INCORRECT - Expected both technical and behavioral questions"
+      },
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "ai_question": "That's great to hear you're excited about the opportunity! To better understand your fit for the Software Development Engineer role, can you elaborate on your background and experience in software development?",
+          "mock_answer": "I have experience with various technical projects and have worked on several challenging problems in my previous roles.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer was quite generic, stating they have experience with various technical projects and have worked on several challenging problems. While this indicates some level of experience, it lacks specific details about their background and experience in software development, which is what was asked.",
+            "next_utterance": "That's a good start, but can you be more specific about the technical projects you've worked on and the challenging problems you've faced? For instance, what programming languages or technologies did you use, and how did you approach solving those challenging problems?"
+          }
+        },
+        {
+          "turn": 2,
+          "ai_question": "That's a good start, but can you be more specific about the technical projects you've worked on and the challenging problems you've faced? For instance, what programming languages or technologies did you use, and how did you approach solving those challenging problems?",
+          "mock_answer": "In my recent project, I worked on developing a distributed system using Python and implemented microservices architecture with Docker containers.",
+          "ai_conductor_decision": {
+            "chosen_action": "DEEPEN",
+            "analysis": "The candidate provided a specific example of a recent project, mentioning the development of a distributed system using Python and implementing microservices architecture with Docker containers. This answer is relevant and provides some technical details, but it lacks depth regarding the challenges faced, the design decisions made, and the outcomes of the project.",
+            "next_utterance": "That's a great example of a complex project. Can you delve deeper into the design decisions behind choosing a microservices architecture? What were some of the key considerations, and how did you handle potential issues like service communication or data consistency?"
+          }
+        },
+        {
+          "turn": 3,
+          "ai_question": "That's a great example of a complex project. Can you delve deeper into the design decisions behind choosing a microservices architecture? What were some of the key considerations, and how did you handle potential issues like service communication or data consistency?",
+          "mock_answer": "I implemented a caching layer using Redis, optimized database queries, and reduced response time by 40%. I also set up monitoring with Prometheus and Grafana for real-time performance tracking.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "Forced transition to prevent repetitive questioning",
+            "next_utterance": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered."
+          }
+        },
+        {
+          "turn": 4,
+          "ai_question": "I think we've covered this area well. Let me shift our focus to another important aspect. Tell me about a challenging project from your background and how you approached solving the technical problems you encountered.",
+          "mock_answer": "I don't have extensive experience in this particular area. Could we discuss something else I'm more familiar with?",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Software Development Engineer role?"
+          }
+        },
+        {
+          "turn": 5,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. Let's do a quick problem-solving exercise. How would you approach designing a solution for a typical challenge in the Software Development Engineer role?",
+          "mock_answer": "I have solid experience with this. I've worked on similar challenges where I had to balance performance requirements with system constraints. I typically start by analyzing the requirements and then design a scalable solution.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer was somewhat generic, stating they have 'solid experience' with designing solutions for typical challenges in the Software Development Engineer role and that they typically start by analyzing requirements and designing a scalable solution. However, they did not provide specific details or examples to support their claim.",
+            "next_utterance": "That's a good start, but can you provide a concrete example from your past experience where you had to design a scalable solution? What were the specific requirements, and how did you ensure the solution was scalable?"
+          }
+        },
+        {
+          "turn": 6,
+          "ai_question": "That's a good start, but can you provide a concrete example from your past experience where you had to design a scalable solution? What were the specific requirements, and how did you ensure the solution was scalable?",
+          "mock_answer": "In my experience, I've found that proper testing and documentation are crucial. I always implement comprehensive unit tests and maintain clear technical documentation for future maintenance.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer repeated their previous response about the importance of testing and documentation without providing a concrete example of designing a scalable solution as requested. The answer did not directly address the question asked.",
+            "next_utterance": "I appreciate your emphasis on testing and documentation, but I'd like to focus on the scalability aspect. Can you provide a specific instance where you designed a system to handle increased load or demand, and what strategies you used to ensure it scaled effectively?"
+          }
+        },
+        {
+          "turn": 7,
+          "ai_question": "I appreciate your emphasis on testing and documentation, but I'd like to focus on the scalability aspect. Can you provide a specific instance where you designed a system to handle increased load or demand, and what strategies you used to ensure it scaled effectively?",
+          "mock_answer": "I have some experience with this, but I'd be interested in discussing other aspects of the role where I can demonstrate my stronger skills.",
+          "ai_conductor_decision": {
+            "chosen_action": "CONCEDE_AND_PIVOT",
+            "analysis": "Candidate conceded - pivoted to next topic area",
+            "next_utterance": "No problem, that's completely understandable. Let's move on to a different area then. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?"
+          }
+        },
+        {
+          "turn": 8,
+          "ai_question": "No problem, that's completely understandable. Let's move on to a different area then. That's all my questions for you. Now, what questions do you have for me about the role, the team, or the culture here?",
+          "mock_answer": "I've worked extensively with this technology stack. I understand the trade-offs between different approaches and have experience optimizing for both performance and maintainability. I also stay current with industry best practices.",
+          "ai_conductor_decision": {
+            "chosen_action": "CHALLENGE",
+            "analysis": "The candidate's last answer repeated their previous statement about understanding trade-offs and optimizing for performance and maintainability, without providing a specific instance or deeper insight into scalability as requested. The answer did not directly address the request for a concrete example of designing a scalable solution.",
+            "next_utterance": "I appreciate your understanding of trade-offs, but I'd like to focus on a specific example. Can you describe a particular instance where you had to scale a system to meet growing demands, and what specific strategies you employed to achieve that scalability?"
+          }
+        },
+        {
+          "turn": 9,
+          "ai_question": "I appreciate your understanding of trade-offs, but I'd like to focus on a specific example. Can you describe a particular instance where you had to scale a system to meet growing demands, and what specific strategies you employed to achieve that scalability?",
+          "mock_answer": "I've not only implemented these solutions but also mentored other engineers on best practices. I believe in knowledge sharing and have contributed to internal documentation and training materials.",
+          "ai_conductor_decision": {
+            "chosen_action": "TRANSITION",
+            "analysis": "The candidate's last answer highlighted their experience in mentoring other engineers and contributing to internal documentation and training materials. While this shows their ability in knowledge sharing and leadership, it doesn't directly address the specific question about scaling a system to meet growing demands. The answer was somewhat evasive as it didn't provide the concrete example requested.",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+          }
+        },
+        {
+          "turn": 10,
+          "ai_question": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?",
+          "mock_answer": "I'm interested in learning about the team culture and growth opportunities. What are the biggest challenges the team is currently facing?",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA",
+            "analysis": "Transitioning to company Q&A phase",
+            "next_utterance": "Thank you for the detailed discussion today. That concludes our interview. Do you have any questions for me or about Adobe?"
+          }
+        },
+        {
+          "turn": 11,
+          "ai_question": "Our Software Development Engineer team at Adobe fosters a collaborative environment where innovation thrives. Currently, the team is tackling complex challenges related to scaling our cloud-based services and integrating AI-driven features into our products. One of the biggest challenges is ensuring seamless performance and reliability as we continue to expand our offerings. We're addressing these challenges through ongoing innovation and professional development opportunities.\n\nDo you have any other questions?",
+          "mock_answer": "Thank you for the information. I don't have any more questions at this time.",
+          "ai_conductor_decision": {
+            "chosen_action": "COMPANY_QNA_COMPLETE",
+            "analysis": "Company Q&A phase completed",
+            "next_utterance": "Thank you for your time today!"
+          }
+        }
+      ],
+      "test_results": {
+        "status": "PASS",
+        "errors": [],
+        "topics_covered": [
+          "Microservices",
+          "Communication"
+        ],
+        "topic_repetition_detected": true,
+        "interview_completed_successfully": true,
+        "total_turns": 11,
+        "api_calls_made": 0
+      }
+    }
+  },
+  "test_timestamp": "2025-09-28T19:06:37.121874"
+}
