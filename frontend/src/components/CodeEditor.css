@@ -1,0 +1,300 @@
+/* Code Editor Container */
+.code-editor-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.code-editor-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Header */
+.code-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+  min-height: 48px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.editor-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Selectors */
+.language-select,
+.theme-select {
+  padding: 6px 12px;
+  background: #3c3c3c;
+  color: #cccccc;
+  border: 1px solid #464647;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.language-select:hover,
+.theme-select:hover {
+  background: #404040;
+}
+
+.language-select:focus,
+.theme-select:focus {
+  outline: none;
+  border-color: #0e639c;
+}
+
+/* Font Size Control */
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #cccccc;
+  font-size: 12px;
+}
+
+.font-size-slider {
+  width: 60px;
+  height: 4px;
+  background: #464647;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.font-size-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #0e639c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.font-size-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #0e639c;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 8px;
+  background: transparent;
+  color: #cccccc;
+  border: 1px solid #464647;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: #404040;
+  color: white;
+  border-color: #0e639c;
+}
+
+/* Editor Wrapper */
+.editor-wrapper {
+  flex: 1;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+/* Run Output */
+.code-run-output {
+  background: #111316;
+  color: #e5e7eb;
+  border-top: 1px solid #3e3e42;
+  padding: 10px 16px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.code-run-output pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-run-output .muted {
+  color: #9ca3af;
+}
+
+/* Footer */
+.code-editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #2d2d30;
+  border-top: 1px solid #3e3e42;
+  font-size: 12px;
+  color: #cccccc;
+  min-height: 32px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-indicator {
+  background: #0e639c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.lines-indicator,
+.chars-indicator {
+  color: #a0a0a0;
+}
+
+.footer-right {
+  color: #a0a0a0;
+}
+
+.help-text {
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .code-editor-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .header-left,
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .header-controls {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .font-size-control {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .code-editor-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .footer-left {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+/* Animation for smooth transitions */
+.code-editor-container {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for Monaco Editor */
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider {
+  background: rgba(121, 121, 121, 0.4) !important;
+}
+
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider:hover {
+  background: rgba(100, 100, 100, 0.7) !important;
+}
+
+/* Loading state */
+.editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #cccccc;
+  font-size: 16px;
+}
+
+/* Error state */
+.editor-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #f48771;
+  text-align: center;
+  padding: 20px;
+}
+
+.editor-error h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.editor-error p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}

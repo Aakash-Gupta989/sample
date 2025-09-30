@@ -1,0 +1,95 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+.dashboard-options {
+  display: flex;
+  gap: 3rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.option-card {
+  flex: 1;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: center;
+}
+
+.option-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.option-card h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.option-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.card-arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.option-card:hover .card-arrow {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-options {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .option-card {
+    padding: 2rem 1.5rem;
+  }
+}
