@@ -284,11 +284,14 @@ const InterviewSession = () => {
   // TTS functions with browser fallback
   const playTTS = async (text, message = null) => {
     console.log('🎤 playTTS called with:', { inputMode, textLength: text?.length, hasText: !!text?.trim() });
+    console.log('🎤 playTTS text content:', text);
     
     if (inputMode !== 'voice' || !text.trim()) {
       console.log('🔇 TTS skipped - not voice mode or no text');
       return;
     }
+    
+    console.log('🎤 TTS proceeding - will speak:', text.substring(0, 100) + '...');
     
     try {
       // Stop any current audio and recording
@@ -1039,6 +1042,8 @@ const InterviewSession = () => {
         console.log('❌ data.status:', data.status);
         console.log('❌ data.message:', data.message);
         // Fallback to old behavior if backend not updated
+        console.log('🔍 Fallback case - data.question:', data.question);
+        console.log('🔍 Fallback case - data:', data);
         setCurrentQuestion(data);
         const aiMessage = {
           id: `fallback_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -1046,6 +1051,7 @@ const InterviewSession = () => {
           content: data.question || 'Welcome to the interview! Please introduce yourself.',
           timestamp: new Date()
         };
+        console.log('🔍 Fallback case - aiMessage content:', aiMessage.content);
         setMessages(prev => [...prev, aiMessage]); // Add to existing messages instead of replacing
         setInterviewPhase('questioning');
       }
