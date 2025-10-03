@@ -230,25 +230,13 @@ const InterviewSession = () => {
   useEffect(() => {
     if (inputMode === 'voice' && messages.length > 0) {
       const lastMessage = messages[messages.length - 1];
-      console.log('🎤 TTS Check - Message count:', messages.length, 'Last message role:', lastMessage.role);
       
       if (lastMessage.role === 'assistant' && lastMessage.content) {
         // Skip TTS for silent messages (clarifications) and coding problems
-        if (lastMessage.silent) {
-          console.log('🔇 Skipping TTS for silent message (clarification)');
-        } else if (lastMessage.isCodingProblem) {
-          console.log('🔇 Skipping TTS for coding problem');
-        } else {
-          console.log('🎤 Triggering TTS for new AI message:', lastMessage.content.substring(0, 50) + '...');
-          console.log('🎤 Full message content:', lastMessage.content);
-          console.log('🎤 This is message #', messages.length, 'in the conversation');
+        if (!lastMessage.silent && !lastMessage.isCodingProblem) {
           playTTS(lastMessage.content, lastMessage);
         }
-      } else {
-        console.log('🔇 TTS skipped - not assistant message or no content');
       }
-    } else {
-      console.log('🔇 TTS skipped - not voice mode or no messages');
     }
   }, [messages, inputMode]);
 
@@ -283,15 +271,9 @@ const InterviewSession = () => {
 
   // TTS functions with browser fallback
   const playTTS = async (text, message = null) => {
-    console.log('🎤 playTTS called with:', { inputMode, textLength: text?.length, hasText: !!text?.trim() });
-    console.log('🎤 playTTS text content:', text);
-    
     if (inputMode !== 'voice' || !text.trim()) {
-      console.log('🔇 TTS skipped - not voice mode or no text');
       return;
     }
-    
-    console.log('🎤 TTS proceeding - will speak:', text.substring(0, 100) + '...');
     
     try {
       // Stop any current audio and recording
@@ -319,7 +301,6 @@ const InterviewSession = () => {
         
         // Wait for voices to load properly
         const voices = await getVoicesWithFallback();
-        console.log('🎤 Available voices:', voices.length);
         
         // Priority order for UK female voices
         const ukVoice = voices.find(voice => 
@@ -343,10 +324,6 @@ const InterviewSession = () => {
         
         if (ukVoice) {
           utterance.voice = ukVoice;
-          console.log('🎤 Using voice:', ukVoice.name, ukVoice.lang);
-        } else {
-          console.log('⚠️ No UK voice found, using default. Available voices:', voices.length);
-          console.log('🎤 Available voice names:', voices.map(v => v.name));
         }
         
         // Configure for more natural female voice
@@ -354,8 +331,9 @@ const InterviewSession = () => {
         utterance.pitch = 1.0;
         utterance.volume = 0.8;
         
-        console.log('🎤 About to speak:', text.substring(0, 50) + '...');
-        console.log('🎤 Utterance config:', { rate: utterance.rate, pitch: utterance.pitch, volume: utterance.volume });
+        utterance.onstart = () => {
+          console.log('🎤 TTS started speaking');
+        };
         
         utterance.onend = () => {
           setIsSpeaking(false);
@@ -404,9 +382,12 @@ const InterviewSession = () => {
         
         setCurrentAudio({ pause: () => window.speechSynthesis.cancel() });
         
-        console.log('🎤 Calling speechSynthesis.speak() now...');
+        // Ensure speech synthesis is ready
+        if (window.speechSynthesis.speaking) {
+          window.speechSynthesis.cancel();
+        }
+        
         window.speechSynthesis.speak(utterance);
-        console.log('🎤 speechSynthesis.speak() called successfully');
       } else {
         throw new Error('No TTS available');
       }
@@ -1049,8 +1030,6 @@ const InterviewSession = () => {
         console.log('❌ data.status:', data.status);
         console.log('❌ data.message:', data.message);
         // Fallback to old behavior if backend not updated
-        console.log('🔍 Fallback case - data.question:', data.question);
-        console.log('🔍 Fallback case - data:', data);
         setCurrentQuestion(data);
         const aiMessage = {
           id: `fallback_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -1058,8 +1037,7 @@ const InterviewSession = () => {
           content: data.question || 'Welcome to the interview! Please introduce yourself.',
           timestamp: new Date()
         };
-        console.log('🔍 Fallback case - aiMessage content:', aiMessage.content);
-        setMessages(prev => [...prev, aiMessage]); // Add to existing messages instead of replacing
+        setMessages(prev => [...prev, aiMessage]);
         setInterviewPhase('questioning');
       }
       
