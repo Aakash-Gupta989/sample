@@ -227,64 +227,18 @@ const PracticeMode = () => {
 
   // Voice recording - Fixed to properly collect audio chunks
   const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      
-      // Check supported MIME types and use the best one
-      let mimeType = 'audio/webm';
-      if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
-        mimeType = 'audio/webm;codecs=opus';
-      } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
-        mimeType = 'audio/mp4';
-      } else if (MediaRecorder.isTypeSupported('audio/ogg;codecs=opus')) {
-        mimeType = 'audio/ogg;codecs=opus';
-      }
-      
-      const recorder = new MediaRecorder(stream, { mimeType });
-      const chunks = []; // Use local array to avoid state closure issues
-      
-      recorder.ondataavailable = (event) => {
-        console.log('Audio data available:', event.data.size, 'bytes');
-        if (event.data.size > 0) {
-          chunks.push(event.data);
-        }
-      };
-      
-      recorder.onstop = async () => {
-        console.log('Recording stopped. Total chunks:', chunks.length);
-        const audioBlob = new Blob(chunks, { type: mimeType });
-        console.log('Created audio blob:', audioBlob.size, 'bytes, type:', audioBlob.type);
-        
-        if (audioBlob.size > 0) {
-          await transcribeAndFillInput(audioBlob);
-        } else {
-          console.error('No audio data captured');
-          alert('No audio was recorded. Please try again.');
-        }
-        
-        stream.getTracks().forEach(track => track.stop());
-      };
-      
-      recorder.start(1000); // Collect data every 1 second
-      setMediaRecorder(recorder);
-      setIsRecording(true);
-      setAudioChunks([]); // Reset state for UI purposes
-    } catch (error) {
-      console.error('Error starting recording:', error);
-      alert('Could not access microphone. Please check permissions.');
-    }
+    // Use free Speech Recognition directly - no MediaRecorder needed
+    startSpeechRecognition();
   };
 
   const stopRecording = () => {
-    if (mediaRecorder && mediaRecorder.state === 'recording') {
-      mediaRecorder.stop();
-      setIsRecording(false);
-      setMediaRecorder(null);
-    }
+    // Stop speech recognition
+    speechRecognition.stopListening();
+    setIsRecording(false);
   };
 
-  const transcribeAndFillInput = async (audioBlob) => {
-    // Use free Speech Recognition instead of backend transcription
+  const startSpeechRecognition = () => {
+    // Use free Speech Recognition directly - no audio recording needed
     if (!speechRecognition.isAvailable()) {
       alert('Speech recognition not available in this browser. Please try typing instead.');
       return;
@@ -323,9 +277,13 @@ const PracticeMode = () => {
 
   const toggleRecording = () => {
     if (isRecording) {
-      stopRecording();
+      // Stop speech recognition
+      speechRecognition.stopListening();
+      setIsRecording(false);
     } else {
-      startRecording();
+      // Start speech recognition directly
+      startSpeechRecognition();
+      setIsRecording(true);
     }
   };
 

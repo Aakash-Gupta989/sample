@@ -1506,58 +1506,18 @@ const InterviewSession = () => {
 
   // Voice recording (aligned with Practice page)
   const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      
-      // Choose best supported mime type
-      let mimeType = 'audio/webm';
-      if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
-        mimeType = 'audio/webm;codecs=opus';
-      } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
-        mimeType = 'audio/mp4';
-      } else if (MediaRecorder.isTypeSupported('audio/ogg;codecs=opus')) {
-        mimeType = 'audio/ogg;codecs=opus';
-      }
-      
-      const recorder = new MediaRecorder(stream, { mimeType });
-      const chunks = [];
-      
-      recorder.ondataavailable = (event) => {
-        if (event.data && event.data.size > 0) {
-          chunks.push(event.data);
-        }
-      };
-      
-      recorder.onstop = async () => {
-        const audioBlob = new Blob(chunks, { type: mimeType });
-        if (audioBlob.size > 0) {
-          await transcribeAndFillInput(audioBlob);
-        } else {
-          alert('No audio was recorded. Please try again.');
-        }
-        stream.getTracks().forEach(track => track.stop());
-      };
-      
-      recorder.start(1000); // collect data every 1s
-      setMediaRecorder(recorder);
-      setIsRecording(true);
-      setAudioChunks([]);
-    } catch (error) {
-      console.error('Error starting recording:', error);
-      alert('Could not access microphone. Please check permissions.');
-    }
+    // Use free Speech Recognition directly - no MediaRecorder needed
+    startSpeechRecognition();
   };
 
   const stopRecording = () => {
-    if (mediaRecorder && mediaRecorder.state === 'recording') {
-      mediaRecorder.stop();
-      setIsRecording(false);
-      setMediaRecorder(null);
-    }
+    // Stop speech recognition
+    speechRecognition.stopListening();
+    setIsRecording(false);
   };
 
-  const transcribeAndFillInput = async (audioBlob) => {
-    // Use free Speech Recognition instead of backend transcription
+  const startSpeechRecognition = () => {
+    // Use free Speech Recognition directly - no audio recording needed
     if (!speechRecognition.isAvailable()) {
       alert('Speech recognition not available in this browser. Please try typing instead.');
       return;
@@ -1603,9 +1563,13 @@ const InterviewSession = () => {
 
   const toggleRecording = () => {
     if (isRecording) {
-      stopRecording();
+      // Stop speech recognition
+      speechRecognition.stopListening();
+      setIsRecording(false);
     } else {
-      startRecording();
+      // Start speech recognition directly
+      startSpeechRecognition();
+      setIsRecording(true);
     }
   };
 
