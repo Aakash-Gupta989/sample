@@ -238,6 +238,7 @@ const InterviewSession = () => {
           console.log('🔇 Skipping TTS for coding problem');
         } else {
           console.log('🎤 Triggering TTS for new AI message:', lastMessage.content.substring(0, 50) + '...');
+          console.log('🎤 Full message content:', lastMessage.content);
           playTTS(lastMessage.content, lastMessage);
         }
       }
@@ -351,13 +352,15 @@ const InterviewSession = () => {
             return;
           }
           
-          // Auto-start recording when TTS finishes
-          if (inputMode === 'voice') {
+          // Auto-start recording when TTS finishes (only for voice mode)
+          if (inputMode === 'voice' && message && !message.isInitialGreeting) {
             console.log('🎤 Auto-starting recording after TTS completion');
             setTimeout(() => {
               startSpeechRecognition();
               setIsRecording(true);
-            }, 500); // Small delay for smooth transition
+            }, 1000); // Longer delay to ensure TTS is completely finished
+          } else if (inputMode === 'voice' && message && message.isInitialGreeting) {
+            console.log('🔇 Skipping auto-start for initial greeting');
           }
         };
         
@@ -401,13 +404,15 @@ const InterviewSession = () => {
         return;
       }
       
-      // Auto-start recording even on TTS error
-      if (inputMode === 'voice') {
+      // Auto-start recording even on TTS error (but not for initial greeting)
+      if (inputMode === 'voice' && message && !message.isInitialGreeting) {
         console.log('🎤 Auto-starting recording after TTS error');
         setTimeout(() => {
           startSpeechRecognition();
           setIsRecording(true);
-        }, 500);
+        }, 1000);
+      } else if (inputMode === 'voice' && message && message.isInitialGreeting) {
+        console.log('🔇 Skipping auto-start for initial greeting error');
       }
     }
   };
