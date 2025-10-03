@@ -10,8 +10,16 @@ const config = {
   }
 };
 
-// Determine environment
-const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+// Determine environment - force production for Vercel deployment
+const environment = (process.env.NODE_ENV === 'production' || process.env.VERCEL) ? 'production' : 'development';
+
+// Debug logging
+console.log('🔧 Environment detection:', {
+  NODE_ENV: process.env.NODE_ENV,
+  VERCEL: process.env.VERCEL,
+  selectedEnvironment: environment,
+  config: config[environment]
+});
 
 // Export current environment config
 export default config[environment];
