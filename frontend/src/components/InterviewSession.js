@@ -1548,7 +1548,7 @@ const InterviewSession = () => {
             }
           }
           
-          // Only process final results
+          // For voice mode, only process final results when user stops recording
           if (result.isFinal && result.final) {
             const transcribedText = result.final.trim();
             console.log('✅ Final transcription:', transcribedText);

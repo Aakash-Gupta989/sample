@@ -44,14 +44,14 @@ class SpeechRecognitionService {
   setupRecognition() {
     if (!this.recognition) return;
     
-    // Configuration for manual control
-    this.recognition.continuous = false; // Stop after first result - manual control
+    // Configuration for voice mode - continuous recording
+    this.recognition.continuous = true; // Keep listening until manually stopped
     this.recognition.interimResults = true; // Show interim results
     this.recognition.lang = 'en-US'; // Default language
     this.recognition.maxAlternatives = 1;
     
-    // Add timeout handling for manual control
-    this.recognition.timeout = 30000; // 30 seconds timeout
+    // Add timeout handling for voice mode
+    this.recognition.timeout = 60000; // 60 seconds timeout for long responses
     this.recognition.interval = 1000; // 1 second intervals
     
     // Event handlers
@@ -75,24 +75,23 @@ class SpeechRecognitionService {
         }
       }
       
-      // For manual control, we only care about final results
+      // For voice mode, accumulate final results and show interim
       if (finalTranscript) {
-        console.log('✅ Final transcription:', finalTranscript);
-        if (this.onResult) {
-          this.onResult({
-            final: finalTranscript,
-            interim: '',
-            isFinal: true
-          });
-        }
-      } else if (interimTranscript) {
+        console.log('✅ Final transcription segment:', finalTranscript);
+        // Accumulate final results - don't send immediately
+        this.accumulatedText = (this.accumulatedText || '') + finalTranscript + ' ';
+        console.log('📝 Accumulated text so far:', this.accumulatedText);
+      }
+      
+      if (interimTranscript) {
         // Show interim results for user feedback
         console.log('🎤 Interim:', interimTranscript);
         if (this.onResult) {
           this.onResult({
             final: '',
             interim: interimTranscript,
-            isFinal: false
+            isFinal: false,
+            accumulated: this.accumulatedText || ''
           });
         }
       }
@@ -188,16 +187,26 @@ class SpeechRecognitionService {
       this.interimTimeout = null;
     }
     
-    // Finalize any pending interim result
-    if (this.lastInterimResult && this.onResult) {
-      console.log('🎤 Finalizing pending speech:', this.lastInterimResult);
+    // Return accumulated text and clear it
+    const finalText = this.accumulatedText || '';
+    this.accumulatedText = '';
+    
+    if (finalText.trim() && this.onResult) {
+      console.log('🎤 Final accumulated text:', finalText);
       this.onResult({
-        final: this.lastInterimResult,
+        final: finalText.trim(),
         interim: '',
         isFinal: true
       });
-      this.lastInterimResult = '';
     }
+  }
+  
+  getAccumulatedText() {
+    return this.accumulatedText || '';
+  }
+  
+  clearAccumulatedText() {
+    this.accumulatedText = '';
   }
   
   abort() {
