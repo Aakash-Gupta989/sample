@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import AceEditor from 'react-ace';
+import config from '../config';
 import { 
   Play, 
   Copy, 
@@ -244,7 +245,7 @@ const CodeEditor = ({ isVisible, onClose, initialCode, onCodeChange }) => {
         await runPython();
       } else {
         // Use backend universal runner (Judge0)
-        const resp = await fetch('http://localhost:8000/code/run', {
+        const resp = await fetch(`${config.API_BASE_URL}/code/run`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ language, code })

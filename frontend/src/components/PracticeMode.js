@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import config from '../config';
 import { 
   MessageCircle, 
   Mic, 
@@ -153,7 +154,7 @@ const PracticeMode = () => {
 
   const loadFirstQuestion = async () => {
     try {
-      const response = await fetch('http://localhost:8000/practice/session');
+      const response = await fetch(`${config.API_BASE_URL}/practice/session`);
       const data = await response.json();
       
       if (data.success && data.currentQuestion) {
@@ -187,7 +188,7 @@ const PracticeMode = () => {
 
   const loadNextQuestion = async () => {
     try {
-      const response = await fetch('http://localhost:8000/practice/next-question', {
+      const response = await fetch(`${config.API_BASE_URL}/practice/next-question`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ completedQuestions })
@@ -298,7 +299,7 @@ const PracticeMode = () => {
       formData.append('file', audioBlob, filename);
       
       console.log('Sending transcription request...');
-      const response = await fetch('http://localhost:8000/transcribe', {
+      const response = await fetch(`${config.API_BASE_URL}/transcribe`, {
         method: 'POST',
         body: formData,
       });
@@ -358,7 +359,7 @@ const PracticeMode = () => {
     setIsAnalyzing(true);
 
     try {
-      const response = await fetch('http://localhost:8000/practice/analyze-answer', {
+      const response = await fetch(`${config.API_BASE_URL}/practice/analyze-answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -449,7 +450,7 @@ const PracticeMode = () => {
 
     // Get AI response for follow-up
     try {
-      const response = await fetch('http://localhost:8000/practice/chat', {
+      const response = await fetch(`${config.API_BASE_URL}/practice/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

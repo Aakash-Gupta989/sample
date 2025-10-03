@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import config from '../config';
 import { 
   MessageCircle, 
   Mic, 
@@ -531,7 +532,7 @@ const InterviewSession = () => {
     
     try {
       // Submit code to backend for evaluation (no code dump in chat)
-      const response = await fetch('http://localhost:8000/coding/submit', {
+      const response = await fetch(`${config.API_BASE_URL}/coding/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -779,7 +780,7 @@ const InterviewSession = () => {
     try {
       // Background generation should have the problem ready - request immediately
       console.log('🎯 Requesting pre-generated coding problem...');
-      const response = await fetch(`http://localhost:8000/interview/next-coding-problem?session_id=${sessionId}`);
+      const response = await fetch(`${config.API_BASE_URL}/interview/next-coding-problem?session_id=${sessionId}`);
       const data = await response.json();
       
       if (data.status === 'success' && data.problem) {
@@ -936,8 +937,8 @@ const InterviewSession = () => {
       console.log('📤 Request body:', requestBody);
       console.log('📤 Request body JSON:', JSON.stringify(requestBody));
       
-      console.log('🌐 Making fetch request to: http://localhost:8000/interview/start');
-      const response = await fetch('http://localhost:8000/interview/start', {
+      console.log('🌐 Making fetch request to:', `${config.API_BASE_URL}/interview/start`);
+      const response = await fetch(`${config.API_BASE_URL}/interview/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody)
@@ -1052,7 +1053,7 @@ const InterviewSession = () => {
     }
     try {
       console.log('🔍 Fetching next question for session:', sessionId);
-      const res = await fetch(`http://localhost:8000/interview/next-question?session_id=${encodeURIComponent(sessionId)}`);
+        const res = await fetch(`${config.API_BASE_URL}/interview/next-question?session_id=${encodeURIComponent(sessionId)}`);
       const data = await res.json();
       console.log('📋 Next question response:', JSON.stringify(data, null, 2));
       
@@ -1137,7 +1138,7 @@ const InterviewSession = () => {
       // Handle company Q&A phase
       if (interviewPhase === 'company_qna' && sessionId) {
         console.log('🏢 Submitting company Q&A response...');
-        const res = await fetch('http://localhost:8000/interview/submit-company-question', {
+        const res = await fetch(`${config.API_BASE_URL}/interview/submit-company-question`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -1189,7 +1190,7 @@ const InterviewSession = () => {
       
       // If regular introduction for technical+behavioral interview
       if (interviewPhase === 'awaiting_introduction' && sessionId) {
-        const res = await fetch('http://localhost:8000/interview/introduce', {
+        const res = await fetch(`${config.API_BASE_URL}/interview/introduce`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ session_id: sessionId, introduction: messageText })
@@ -1248,7 +1249,7 @@ const InterviewSession = () => {
           }
         }
       } else if (interviewPhase === 'brief_introduction' && sessionId) {
-        const res = await fetch('http://localhost:8000/interview/brief-introduce', {
+        const res = await fetch(`${config.API_BASE_URL}/interview/brief-introduce`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ session_id: sessionId, introduction: messageText })
@@ -1280,7 +1281,7 @@ const InterviewSession = () => {
       } else if (showCodeEditor && !isInFollowUp && sessionId) {
         // Handle clarification questions during coding phase (before code submission)
         console.log('❓ Asking clarification question...');
-        const res = await fetch('http://localhost:8000/coding/clarify', {
+        const res = await fetch(`${config.API_BASE_URL}/coding/clarify`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -1315,7 +1316,7 @@ const InterviewSession = () => {
       } else if (isInFollowUp && sessionId) {
         // Handle follow-up question answer for coding interviews
         console.log('📤 Submitting follow-up answer...');
-        const res = await fetch('http://localhost:8000/coding/followup', {
+        const res = await fetch(`${config.API_BASE_URL}/coding/followup`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -1380,7 +1381,7 @@ const InterviewSession = () => {
         }
       } else if (sessionId && currentQuestion) {
         // Submit answer to current question
-        const res = await fetch('http://localhost:8000/interview/answer', {
+        const res = await fetch(`${config.API_BASE_URL}/interview/answer`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -1425,7 +1426,7 @@ const InterviewSession = () => {
           
           // Start the company Q&A phase
           try {
-            const companyRes = await fetch('http://localhost:8000/interview/start-company-qna', {
+            const companyRes = await fetch(`${config.API_BASE_URL}/interview/start-company-qna`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ session_id: sessionId })
@@ -1563,7 +1564,7 @@ const InterviewSession = () => {
       else if (audioBlob.type.includes('ogg')) filename = 'audio.ogg';
       formData.append('file', audioBlob, filename);
       
-      const response = await fetch('http://localhost:8000/transcribe', {
+      const response = await fetch(`${config.API_BASE_URL}/transcribe`, {
         method: 'POST',
         body: formData,
       });

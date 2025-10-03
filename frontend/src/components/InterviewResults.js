@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import config from '../config';
 import { 
   ArrowLeft,
   Download,
@@ -39,7 +40,7 @@ const InterviewResults = () => {
     try {
       setLoading(true);
       console.log('🔍 Fetching results for session:', sessionId);
-      const response = await fetch(`http://localhost:8000/interview/results/${sessionId}`);
+      const response = await fetch(`${config.API_BASE_URL}/interview/results/${sessionId}`);
       
       if (!response.ok) {
         throw new Error(`Failed to fetch results: ${response.status}`);
