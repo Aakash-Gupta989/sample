@@ -319,6 +319,7 @@ const InterviewSession = () => {
         
         // Wait for voices to load properly
         const voices = await getVoicesWithFallback();
+        console.log('🎤 Available voices:', voices.length);
         
         // Priority order for UK female voices
         const ukVoice = voices.find(voice => 
@@ -345,12 +346,16 @@ const InterviewSession = () => {
           console.log('🎤 Using voice:', ukVoice.name, ukVoice.lang);
         } else {
           console.log('⚠️ No UK voice found, using default. Available voices:', voices.length);
+          console.log('🎤 Available voice names:', voices.map(v => v.name));
         }
         
         // Configure for more natural female voice
         utterance.rate = 0.9;
         utterance.pitch = 1.0;
         utterance.volume = 0.8;
+        
+        console.log('🎤 About to speak:', text.substring(0, 50) + '...');
+        console.log('🎤 Utterance config:', { rate: utterance.rate, pitch: utterance.pitch, volume: utterance.volume });
         
         utterance.onend = () => {
           setIsSpeaking(false);
@@ -399,7 +404,9 @@ const InterviewSession = () => {
         
         setCurrentAudio({ pause: () => window.speechSynthesis.cancel() });
         
+        console.log('🎤 Calling speechSynthesis.speak() now...');
         window.speechSynthesis.speak(utterance);
+        console.log('🎤 speechSynthesis.speak() called successfully');
       } else {
         throw new Error('No TTS available');
       }
