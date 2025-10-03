@@ -22,7 +22,7 @@ class Config:
     FRONTEND_PORT = int(os.getenv("FRONTEND_PORT", 3000))
     
     # CORS Configuration
-    CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+    CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:3000,https://prepandhire.com,https://www.prepandhire.com").split(",")
     
     @classmethod
     def validate(cls):
