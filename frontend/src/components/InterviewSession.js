@@ -1534,6 +1534,10 @@ const InterviewSession = () => {
           // Show interim results in console
           if (result.interim) {
             console.log('🎤 Interim:', result.interim);
+            // Update input field with interim results for better UX
+            if (inputMode === 'text') {
+              setInputText(result.interim);
+            }
           }
           
           if (result.isFinal && result.final) {
@@ -1576,7 +1580,7 @@ const InterviewSession = () => {
 
   const toggleRecording = () => {
     if (isRecording) {
-      // Stop speech recognition
+      // Stop speech recognition and finalize any pending speech
       speechRecognition.stopListening();
       setIsRecording(false);
     } else {

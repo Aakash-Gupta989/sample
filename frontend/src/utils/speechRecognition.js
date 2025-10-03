@@ -15,7 +15,7 @@ class SpeechRecognitionService {
     // For handling long sentences
     this.lastInterimResult = '';
     this.interimTimeout = null;
-    this.pauseThreshold = 2000; // 2 seconds pause to finalize
+    this.pauseThreshold = 5000; // 5 seconds pause to finalize - allows for longer speech
     
     this.initialize();
   }
@@ -84,18 +84,22 @@ class SpeechRecognitionService {
           clearTimeout(this.interimTimeout);
         }
         
-        // Set new timeout to finalize after pause
-        this.interimTimeout = setTimeout(() => {
-          if (this.lastInterimResult && this.onResult) {
-            console.log('⏰ Auto-finalizing long sentence:', this.lastInterimResult);
-            this.onResult({
-              final: this.lastInterimResult,
-              interim: '',
-              isFinal: true
-            });
-            this.lastInterimResult = '';
-          }
-        }, this.pauseThreshold);
+        // Only set timeout if we have substantial content (more than 10 words)
+        const wordCount = interimTranscript.trim().split(/\s+/).length;
+        if (wordCount > 10) {
+          // Set new timeout to finalize after pause
+          this.interimTimeout = setTimeout(() => {
+            if (this.lastInterimResult && this.onResult) {
+              console.log('⏰ Auto-finalizing long sentence:', this.lastInterimResult);
+              this.onResult({
+                final: this.lastInterimResult,
+                interim: '',
+                isFinal: true
+              });
+              this.lastInterimResult = '';
+            }
+          }, this.pauseThreshold);
+        }
       }
       
       // Call the result callback
@@ -166,7 +170,7 @@ class SpeechRecognitionService {
           console.log('⏰ Speech recognition timeout - stopping');
           this.recognition.stop();
         }
-      }, 15000); // 15 second timeout
+      }, 60000); // 60 second timeout for long responses
       
       // Store timeout for cleanup
       this.timeout = timeout;
