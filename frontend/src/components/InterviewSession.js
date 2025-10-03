@@ -276,7 +276,10 @@ const InterviewSession = () => {
 
   // TTS functions with browser fallback
   const playTTS = async (text, message = null) => {
+    console.log('🎤 playTTS called with:', { inputMode, textLength: text?.length, hasText: !!text?.trim() });
+    
     if (inputMode !== 'voice' || !text.trim()) {
+      console.log('🔇 TTS skipped - not voice mode or no text');
       return;
     }
     
@@ -353,14 +356,15 @@ const InterviewSession = () => {
           }
           
           // Auto-start recording when TTS finishes (only for voice mode)
-          if (inputMode === 'voice' && message && !message.isInitialGreeting) {
+          // Only auto-start if this is NOT the first message (initial greeting)
+          if (inputMode === 'voice' && messages.length > 1) {
             console.log('🎤 Auto-starting recording after TTS completion');
             setTimeout(() => {
               startSpeechRecognition();
               setIsRecording(true);
             }, 1000); // Longer delay to ensure TTS is completely finished
-          } else if (inputMode === 'voice' && message && message.isInitialGreeting) {
-            console.log('🔇 Skipping auto-start for initial greeting');
+          } else if (inputMode === 'voice' && messages.length === 1) {
+            console.log('🔇 Skipping auto-start for initial greeting (first message)');
           }
         };
         
@@ -405,14 +409,14 @@ const InterviewSession = () => {
       }
       
       // Auto-start recording even on TTS error (but not for initial greeting)
-      if (inputMode === 'voice' && message && !message.isInitialGreeting) {
+      if (inputMode === 'voice' && messages.length > 1) {
         console.log('🎤 Auto-starting recording after TTS error');
         setTimeout(() => {
           startSpeechRecognition();
           setIsRecording(true);
         }, 1000);
-      } else if (inputMode === 'voice' && message && message.isInitialGreeting) {
-        console.log('🔇 Skipping auto-start for initial greeting error');
+      } else if (inputMode === 'voice' && messages.length === 1) {
+        console.log('🔇 Skipping auto-start for initial greeting error (first message)');
       }
     }
   };
