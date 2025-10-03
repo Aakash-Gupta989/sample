@@ -5,8 +5,8 @@ const config = {
     WS_BASE_URL: 'ws://localhost:8000',
   },
   production: {
-    API_BASE_URL: 'https://prepandhire-backend.onrender.com',
-    WS_BASE_URL: 'wss://prepandhire-backend.onrender.com',
+    API_BASE_URL: 'https://prepandhirebackend.onrender.com',
+    WS_BASE_URL: 'wss://prepandhirebackend.onrender.com',
   }
 };
 
