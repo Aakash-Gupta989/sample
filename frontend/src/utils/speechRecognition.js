@@ -40,10 +40,14 @@ class SpeechRecognitionService {
     if (!this.recognition) return;
     
     // Configuration
-    this.recognition.continuous = false; // Stop after first result
+    this.recognition.continuous = true; // Keep listening until stopped
     this.recognition.interimResults = true; // Show interim results
     this.recognition.lang = 'en-US'; // Default language
     this.recognition.maxAlternatives = 1;
+    
+    // Add timeout handling
+    this.recognition.timeout = 10000; // 10 seconds timeout
+    this.recognition.interval = 1000; // 1 second intervals
     
     // Event handlers
     this.recognition.onstart = () => {
@@ -80,8 +84,20 @@ class SpeechRecognitionService {
       console.error('❌ Speech recognition error:', event.error);
       this.isListening = false;
       
+      // Handle specific error types
+      let errorMessage = event.error;
+      if (event.error === 'no-speech') {
+        errorMessage = 'No speech detected. Please speak louder or closer to the microphone.';
+      } else if (event.error === 'audio-capture') {
+        errorMessage = 'Microphone access denied. Please allow microphone access.';
+      } else if (event.error === 'not-allowed') {
+        errorMessage = 'Microphone permission denied. Please enable microphone access.';
+      } else if (event.error === 'network') {
+        errorMessage = 'Network error. Please check your internet connection.';
+      }
+      
       if (this.onError) {
-        this.onError(event.error);
+        this.onError(errorMessage);
       }
     };
     
@@ -116,6 +132,17 @@ class SpeechRecognitionService {
       this.onError = options.onError;
       this.onEnd = options.onEnd;
       
+      // Add a timeout to prevent hanging
+      const timeout = setTimeout(() => {
+        if (this.isListening) {
+          console.log('⏰ Speech recognition timeout - stopping');
+          this.recognition.stop();
+        }
+      }, 15000); // 15 second timeout
+      
+      // Store timeout for cleanup
+      this.timeout = timeout;
+      
       // Start recognition
       this.recognition.start();
       console.log('🎤 Started listening...');
@@ -130,6 +157,12 @@ class SpeechRecognitionService {
     if (this.recognition && this.isListening) {
       this.recognition.stop();
       console.log('🎤 Stopped listening');
+    }
+    
+    // Clear timeout
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
     }
   }
   

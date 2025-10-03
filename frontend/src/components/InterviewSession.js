@@ -1531,6 +1531,11 @@ const InterviewSession = () => {
         onResult: (result) => {
           console.log('🎤 Speech result:', result);
           
+          // Show interim results in console
+          if (result.interim) {
+            console.log('🎤 Interim:', result.interim);
+          }
+          
           if (result.isFinal && result.final) {
             const transcribedText = result.final.trim();
             console.log('✅ Final transcription:', transcribedText);
@@ -1548,6 +1553,14 @@ const InterviewSession = () => {
         },
         onError: (error) => {
           console.error('❌ Speech recognition error:', error);
+          
+          // Don't show alert for no-speech errors, just log them
+          if (error === 'no-speech') {
+            console.log('🔇 No speech detected - user can try again');
+            return;
+          }
+          
+          // Show alert for other errors
           alert(`Speech recognition failed: ${error}. Please try typing instead.`);
         },
         onEnd: () => {
