@@ -353,7 +353,11 @@ const InterviewSession = () => {
           
           // Auto-start recording when TTS finishes
           if (inputMode === 'voice') {
-            setTimeout(() => startRecording(), 500); // Small delay for smooth transition
+            console.log('🎤 Auto-starting recording after TTS completion');
+            setTimeout(() => {
+              startSpeechRecognition();
+              setIsRecording(true);
+            }, 500); // Small delay for smooth transition
           }
         };
         
@@ -399,7 +403,11 @@ const InterviewSession = () => {
       
       // Auto-start recording even on TTS error
       if (inputMode === 'voice') {
-        setTimeout(() => startRecording(), 500);
+        console.log('🎤 Auto-starting recording after TTS error');
+        setTimeout(() => {
+          startSpeechRecognition();
+          setIsRecording(true);
+        }, 500);
       }
     }
   };
@@ -1524,7 +1532,7 @@ const InterviewSession = () => {
     }
     
     try {
-      console.log('🎤 Starting manual speech recognition...');
+      console.log('🎤 Starting speech recognition...');
       
       // Start speech recognition
       speechRecognition.startListening({
@@ -1583,6 +1591,15 @@ const InterviewSession = () => {
     } catch (error) {
       console.error('❌ Error starting speech recognition:', error);
       alert('Failed to start speech recognition. Please try typing instead.');
+    }
+  };
+
+  // Auto-start recording when AI agent finishes speaking (for voice mode)
+  const autoStartRecording = () => {
+    if (inputMode === 'voice' && !isRecording) {
+      console.log('🎤 Auto-starting recording after AI response');
+      startSpeechRecognition();
+      setIsRecording(true);
     }
   };
 
@@ -1936,6 +1953,10 @@ const InterviewSession = () => {
                     className={`record-btn ${isRecording ? 'recording' : ''}`}
                     onClick={toggleRecording}
                     title={isRecording ? 'Stop recording' : 'Click to speak (fills text field)'}
+                    style={{
+                      backgroundColor: isRecording ? '#ef4444' : '#8b5cf6',
+                      color: 'white'
+                    }}
                   >
                     {isRecording ? <Square size={20} /> : <Mic size={20} />}
                     {isRecording && <div className="recording-indicator-dot"></div>}
@@ -1980,6 +2001,10 @@ const InterviewSession = () => {
                     className={`record-btn ${isRecording ? 'recording' : ''}`}
                     onClick={toggleRecording}
                     title={isRecording ? 'Stop listening' : 'Start listening'}
+                    style={{
+                      backgroundColor: isRecording ? '#ef4444' : '#8b5cf6',
+                      color: 'white'
+                    }}
                   >
                     {isRecording ? <Square size={20} /> : <Mic size={20} />}
                     {isRecording && <div className="recording-indicator-dot"></div>}
