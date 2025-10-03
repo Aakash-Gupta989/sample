@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import config from '../config';
+import speechRecognition from '../utils/speechRecognition';
 import { 
   MessageCircle, 
   Mic, 
@@ -283,41 +284,40 @@ const PracticeMode = () => {
   };
 
   const transcribeAndFillInput = async (audioBlob) => {
+    // Use free Speech Recognition instead of backend transcription
+    if (!speechRecognition.isAvailable()) {
+      alert('Speech recognition not available in this browser. Please try typing instead.');
+      return;
+    }
+    
     try {
-      console.log('Starting transcription for blob:', audioBlob.size, 'bytes, type:', audioBlob.type);
+      console.log('🎤 Starting free speech recognition...');
       
-      const formData = new FormData();
-      
-      // Use proper filename based on blob type
-      let filename = 'audio.webm';
-      if (audioBlob.type.includes('mp4')) {
-        filename = 'audio.mp4';
-      } else if (audioBlob.type.includes('ogg')) {
-        filename = 'audio.ogg';
-      }
-      
-      formData.append('file', audioBlob, filename);
-      
-      console.log('Sending transcription request...');
-      const response = await fetch(`${config.API_BASE_URL}/transcribe`, {
-        method: 'POST',
-        body: formData,
+      // Start speech recognition
+      speechRecognition.startListening({
+        onResult: (result) => {
+          console.log('🎤 Speech result:', result);
+          
+          if (result.isFinal && result.final) {
+            const transcribedText = result.final.trim();
+            console.log('✅ Final transcription:', transcribedText);
+            
+            // Fill the input field with transcribed text
+            setInputText(transcribedText);
+          }
+        },
+        onError: (error) => {
+          console.error('❌ Speech recognition error:', error);
+          alert(`Speech recognition failed: ${error}. Please try typing instead.`);
+        },
+        onEnd: () => {
+          console.log('🎤 Speech recognition ended');
+        }
       });
       
-      const result = await response.json();
-      console.log('Transcription result:', result);
-      
-      if (result.success && result.transcription) {
-        // Fill the input field with transcribed text
-        setInputText(result.transcription);
-        console.log('✅ Transcription successful:', result.transcription);
-      } else {
-        console.error('Transcription failed:', result.error);
-        alert(`Failed to transcribe audio: ${result.error || 'Unknown error'}`);
-      }
     } catch (error) {
-      console.error('Error transcribing audio:', error);
-      alert('Failed to transcribe audio. Please try typing instead.');
+      console.error('❌ Error starting speech recognition:', error);
+      alert('Failed to start speech recognition. Please try typing instead.');
     }
   };
 

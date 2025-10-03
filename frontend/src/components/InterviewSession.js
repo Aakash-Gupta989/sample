@@ -21,6 +21,7 @@ import {
 } from 'fabric';
 import { v4 as uuidv4 } from 'uuid';
 import WebSocketService from '../services/WebSocketService';
+import speechRecognition from '../utils/speechRecognition';
 import Toolbar from './Toolbar';
 import WidgetPanel from './WidgetPanel';
 import CodeEditor from './CodeEditor';
@@ -1556,39 +1557,47 @@ const InterviewSession = () => {
   };
 
   const transcribeAndFillInput = async (audioBlob) => {
+    // Use free Speech Recognition instead of backend transcription
+    if (!speechRecognition.isAvailable()) {
+      alert('Speech recognition not available in this browser. Please try typing instead.');
+      return;
+    }
+    
     try {
-      const formData = new FormData();
-      // Pick filename based on blob type
-      let filename = 'audio.webm';
-      if (audioBlob.type.includes('mp4')) filename = 'audio.mp4';
-      else if (audioBlob.type.includes('ogg')) filename = 'audio.ogg';
-      formData.append('file', audioBlob, filename);
+      console.log('🎤 Starting free speech recognition...');
       
-      const response = await fetch(`${config.API_BASE_URL}/transcribe`, {
-        method: 'POST',
-        body: formData,
+      // Start speech recognition
+      speechRecognition.startListening({
+        onResult: (result) => {
+          console.log('🎤 Speech result:', result);
+          
+          if (result.isFinal && result.final) {
+            const transcribedText = result.final.trim();
+            console.log('✅ Final transcription:', transcribedText);
+            
+            if (inputMode === 'voice') {
+              // In voice mode: auto-send the transcribed text immediately
+              if (transcribedText) {
+                sendMessage(transcribedText);
+              }
+            } else {
+              // In text mode: fill the input field
+              setInputText(transcribedText);
+            }
+          }
+        },
+        onError: (error) => {
+          console.error('❌ Speech recognition error:', error);
+          alert(`Speech recognition failed: ${error}. Please try typing instead.`);
+        },
+        onEnd: () => {
+          console.log('🎤 Speech recognition ended');
+        }
       });
       
-      const result = await response.json();
-      if (result.success && result.transcription) {
-        const transcribedText = result.transcription.trim();
-        
-        if (inputMode === 'voice') {
-          // In voice mode: auto-send the transcribed text immediately
-          if (transcribedText) {
-            await sendMessage(transcribedText);
-          }
-        } else {
-          // In text mode: fill the input field as before
-          setInputText(transcribedText);
-        }
-      } else {
-        console.error('Transcription failed:', result.error);
-        alert(`Failed to transcribe audio: ${result.error || 'Unknown error'}`);
-      }
     } catch (error) {
-      console.error('Error transcribing audio:', error);
-      alert('Failed to transcribe audio. Please try typing instead.');
+      console.error('❌ Error starting speech recognition:', error);
+      alert('Failed to start speech recognition. Please try typing instead.');
     }
   };
 
