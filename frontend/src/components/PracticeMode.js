@@ -238,34 +238,55 @@ const PracticeMode = () => {
   };
 
   const startSpeechRecognition = () => {
-    // Use free Speech Recognition directly - no audio recording needed
+    // Use free Speech Recognition with manual control
     if (!speechRecognition.isAvailable()) {
       alert('Speech recognition not available in this browser. Please try typing instead.');
       return;
     }
     
     try {
-      console.log('🎤 Starting free speech recognition...');
+      console.log('🎤 Starting manual speech recognition...');
       
       // Start speech recognition
       speechRecognition.startListening({
         onResult: (result) => {
           console.log('🎤 Speech result:', result);
           
+          // Show interim results for user feedback
+          if (result.interim) {
+            console.log('🎤 Interim:', result.interim);
+            setInputText(result.interim);
+          }
+          
+          // Only process final results
           if (result.isFinal && result.final) {
             const transcribedText = result.final.trim();
             console.log('✅ Final transcription:', transcribedText);
             
-            // Fill the input field with transcribed text
-            setInputText(transcribedText);
+            if (transcribedText) {
+              // Fill the input field with transcribed text
+              setInputText(transcribedText);
+              // Stop listening after filling
+              speechRecognition.stopListening();
+              setIsRecording(false);
+            }
           }
         },
         onError: (error) => {
           console.error('❌ Speech recognition error:', error);
+          
+          // Don't show alert for no-speech errors, just log them
+          if (error === 'no-speech') {
+            console.log('🔇 No speech detected - user can try again');
+            return;
+          }
+          
+          // Show alert for other errors
           alert(`Speech recognition failed: ${error}. Please try typing instead.`);
         },
         onEnd: () => {
           console.log('🎤 Speech recognition ended');
+          setIsRecording(false);
         }
       });
       

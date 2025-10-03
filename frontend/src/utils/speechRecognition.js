@@ -44,14 +44,14 @@ class SpeechRecognitionService {
   setupRecognition() {
     if (!this.recognition) return;
     
-    // Configuration
-    this.recognition.continuous = true; // Keep listening until stopped
+    // Configuration for manual control
+    this.recognition.continuous = false; // Stop after first result - manual control
     this.recognition.interimResults = true; // Show interim results
     this.recognition.lang = 'en-US'; // Default language
     this.recognition.maxAlternatives = 1;
     
-    // Add timeout handling for long sentences
-    this.recognition.timeout = 30000; // 30 seconds timeout for long sentences
+    // Add timeout handling for manual control
+    this.recognition.timeout = 30000; // 30 seconds timeout
     this.recognition.interval = 1000; // 1 second intervals
     
     // Event handlers
@@ -75,40 +75,26 @@ class SpeechRecognitionService {
         }
       }
       
-      // Handle long sentences - if we have interim results, start a timer
-      if (interimTranscript && interimTranscript !== this.lastInterimResult) {
-        this.lastInterimResult = interimTranscript;
-        
-        // Clear existing timeout
-        if (this.interimTimeout) {
-          clearTimeout(this.interimTimeout);
+      // For manual control, we only care about final results
+      if (finalTranscript) {
+        console.log('✅ Final transcription:', finalTranscript);
+        if (this.onResult) {
+          this.onResult({
+            final: finalTranscript,
+            interim: '',
+            isFinal: true
+          });
         }
-        
-        // Only set timeout if we have substantial content (more than 10 words)
-        const wordCount = interimTranscript.trim().split(/\s+/).length;
-        if (wordCount > 10) {
-          // Set new timeout to finalize after pause
-          this.interimTimeout = setTimeout(() => {
-            if (this.lastInterimResult && this.onResult) {
-              console.log('⏰ Auto-finalizing long sentence:', this.lastInterimResult);
-              this.onResult({
-                final: this.lastInterimResult,
-                interim: '',
-                isFinal: true
-              });
-              this.lastInterimResult = '';
-            }
-          }, this.pauseThreshold);
+      } else if (interimTranscript) {
+        // Show interim results for user feedback
+        console.log('🎤 Interim:', interimTranscript);
+        if (this.onResult) {
+          this.onResult({
+            final: '',
+            interim: interimTranscript,
+            isFinal: false
+          });
         }
-      }
-      
-      // Call the result callback
-      if (this.onResult) {
-        this.onResult({
-          final: finalTranscript,
-          interim: interimTranscript,
-          isFinal: finalTranscript.length > 0
-        });
       }
     };
     

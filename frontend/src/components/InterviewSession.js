@@ -1517,21 +1517,21 @@ const InterviewSession = () => {
   };
 
   const startSpeechRecognition = () => {
-    // Use free Speech Recognition directly - no audio recording needed
+    // Use free Speech Recognition with manual control
     if (!speechRecognition.isAvailable()) {
       alert('Speech recognition not available in this browser. Please try typing instead.');
       return;
     }
     
     try {
-      console.log('🎤 Starting free speech recognition...');
+      console.log('🎤 Starting manual speech recognition...');
       
       // Start speech recognition
       speechRecognition.startListening({
         onResult: (result) => {
           console.log('🎤 Speech result:', result);
           
-          // Show interim results in console
+          // Show interim results for user feedback
           if (result.interim) {
             console.log('🎤 Interim:', result.interim);
             // Update input field with interim results for better UX
@@ -1540,6 +1540,7 @@ const InterviewSession = () => {
             }
           }
           
+          // Only process final results
           if (result.isFinal && result.final) {
             const transcribedText = result.final.trim();
             console.log('✅ Final transcription:', transcribedText);
@@ -1548,9 +1549,15 @@ const InterviewSession = () => {
               if (inputMode === 'voice') {
                 // In voice mode: auto-send the transcribed text immediately
                 sendMessage(transcribedText);
+                // Stop listening after sending
+                speechRecognition.stopListening();
+                setIsRecording(false);
               } else {
                 // In text mode: fill the input field
                 setInputText(transcribedText);
+                // Stop listening after filling
+                speechRecognition.stopListening();
+                setIsRecording(false);
               }
             }
           }
@@ -1569,6 +1576,7 @@ const InterviewSession = () => {
         },
         onEnd: () => {
           console.log('🎤 Speech recognition ended');
+          setIsRecording(false);
         }
       });
       
@@ -1580,11 +1588,13 @@ const InterviewSession = () => {
 
   const toggleRecording = () => {
     if (isRecording) {
-      // Stop speech recognition and finalize any pending speech
+      // Stop speech recognition - user pressed mic again to stop
+      console.log('🎤 User stopped recording');
       speechRecognition.stopListening();
       setIsRecording(false);
     } else {
-      // Start speech recognition directly
+      // Start speech recognition - user pressed mic to start
+      console.log('🎤 User started recording');
       startSpeechRecognition();
       setIsRecording(true);
     }
