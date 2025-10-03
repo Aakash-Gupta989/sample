@@ -1540,14 +1540,14 @@ const InterviewSession = () => {
             const transcribedText = result.final.trim();
             console.log('✅ Final transcription:', transcribedText);
             
-            if (inputMode === 'voice') {
-              // In voice mode: auto-send the transcribed text immediately
-              if (transcribedText) {
+            if (transcribedText) {
+              if (inputMode === 'voice') {
+                // In voice mode: auto-send the transcribed text immediately
                 sendMessage(transcribedText);
+              } else {
+                // In text mode: fill the input field
+                setInputText(transcribedText);
               }
-            } else {
-              // In text mode: fill the input field
-              setInputText(transcribedText);
             }
           }
         },

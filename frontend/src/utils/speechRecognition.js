@@ -12,6 +12,11 @@ class SpeechRecognitionService {
     this.onError = null;
     this.onEnd = null;
     
+    // For handling long sentences
+    this.lastInterimResult = '';
+    this.interimTimeout = null;
+    this.pauseThreshold = 2000; // 2 seconds pause to finalize
+    
     this.initialize();
   }
   
@@ -45,8 +50,8 @@ class SpeechRecognitionService {
     this.recognition.lang = 'en-US'; // Default language
     this.recognition.maxAlternatives = 1;
     
-    // Add timeout handling
-    this.recognition.timeout = 10000; // 10 seconds timeout
+    // Add timeout handling for long sentences
+    this.recognition.timeout = 30000; // 30 seconds timeout for long sentences
     this.recognition.interval = 1000; // 1 second intervals
     
     // Event handlers
@@ -68,6 +73,29 @@ class SpeechRecognitionService {
         } else {
           interimTranscript += transcript;
         }
+      }
+      
+      // Handle long sentences - if we have interim results, start a timer
+      if (interimTranscript && interimTranscript !== this.lastInterimResult) {
+        this.lastInterimResult = interimTranscript;
+        
+        // Clear existing timeout
+        if (this.interimTimeout) {
+          clearTimeout(this.interimTimeout);
+        }
+        
+        // Set new timeout to finalize after pause
+        this.interimTimeout = setTimeout(() => {
+          if (this.lastInterimResult && this.onResult) {
+            console.log('⏰ Auto-finalizing long sentence:', this.lastInterimResult);
+            this.onResult({
+              final: this.lastInterimResult,
+              interim: '',
+              isFinal: true
+            });
+            this.lastInterimResult = '';
+          }
+        }, this.pauseThreshold);
       }
       
       // Call the result callback
@@ -159,10 +187,26 @@ class SpeechRecognitionService {
       console.log('🎤 Stopped listening');
     }
     
-    // Clear timeout
+    // Clear timeouts
     if (this.timeout) {
       clearTimeout(this.timeout);
       this.timeout = null;
+    }
+    
+    if (this.interimTimeout) {
+      clearTimeout(this.interimTimeout);
+      this.interimTimeout = null;
+    }
+    
+    // Finalize any pending interim result
+    if (this.lastInterimResult && this.onResult) {
+      console.log('🎤 Finalizing pending speech:', this.lastInterimResult);
+      this.onResult({
+        final: this.lastInterimResult,
+        interim: '',
+        isFinal: true
+      });
+      this.lastInterimResult = '';
     }
   }
   
