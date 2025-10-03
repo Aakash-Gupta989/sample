@@ -230,6 +230,8 @@ const InterviewSession = () => {
   useEffect(() => {
     if (inputMode === 'voice' && messages.length > 0) {
       const lastMessage = messages[messages.length - 1];
+      console.log('🎤 TTS Check - Message count:', messages.length, 'Last message role:', lastMessage.role);
+      
       if (lastMessage.role === 'assistant' && lastMessage.content) {
         // Skip TTS for silent messages (clarifications) and coding problems
         if (lastMessage.silent) {
@@ -239,9 +241,14 @@ const InterviewSession = () => {
         } else {
           console.log('🎤 Triggering TTS for new AI message:', lastMessage.content.substring(0, 50) + '...');
           console.log('🎤 Full message content:', lastMessage.content);
+          console.log('🎤 This is message #', messages.length, 'in the conversation');
           playTTS(lastMessage.content, lastMessage);
         }
+      } else {
+        console.log('🔇 TTS skipped - not assistant message or no content');
       }
+    } else {
+      console.log('🔇 TTS skipped - not voice mode or no messages');
     }
   }, [messages, inputMode]);
 
@@ -1039,7 +1046,7 @@ const InterviewSession = () => {
           content: data.question || 'Welcome to the interview! Please introduce yourself.',
           timestamp: new Date()
         };
-        setMessages([aiMessage]);
+        setMessages(prev => [...prev, aiMessage]); // Add to existing messages instead of replacing
         setInterviewPhase('questioning');
       }
       
