@@ -12,6 +12,20 @@ class LoadBalancer {
         healthy: true,
         lastCheck: Date.now(),
         weight: 1
+      },
+      {
+        name: 'backend-2', 
+        url: 'https://sample.onrender.com',
+        healthy: false, // Will be set to true once service is fixed
+        lastCheck: Date.now(),
+        weight: 1
+      },
+      {
+        name: 'backend-3',
+        url: 'https://sample1.onrender.com',
+        healthy: false, // Will be set to true once service is fixed
+        lastCheck: Date.now(),
+        weight: 1
       }
     ];
     
