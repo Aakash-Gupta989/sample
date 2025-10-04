@@ -1,0 +1,12 @@
+# Ultra-lightweight requirements for Render free tier
+# No heavy packages that require compilation
+fastapi
+uvicorn[standard]
+websockets
+python-multipart
+python-dotenv
+python-socketio
+aiofiles
+httpx
+openai
+groq
