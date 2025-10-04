@@ -1,7 +1,7 @@
 import config from '../config';
-import loadBalancer from './loadBalancer';
+import connectionPool from './connectionPool';
 
-// API utility functions with load balancing
+// API utility functions with connection pooling
 export const apiCall = async (endpoint, options = {}) => {
   console.log('🌐 Making API call to:', endpoint);
   
@@ -12,11 +12,11 @@ export const apiCall = async (endpoint, options = {}) => {
   };
   
   try {
-    // Use load balancer for automatic failover
-    const response = await loadBalancer.makeRequest(endpoint, { ...defaultOptions, ...options });
+    // Use connection pool for better reliability
+    const response = await connectionPool.makeRequest(endpoint, { ...defaultOptions, ...options });
     return response;
   } catch (error) {
-    console.error('❌ Load balancer failed, falling back to direct connection');
+    console.error('❌ Connection pool failed, falling back to direct connection');
     
     // Fallback to direct connection
     const url = `${config.API_BASE_URL}${endpoint}`;

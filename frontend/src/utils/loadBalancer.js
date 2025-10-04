@@ -12,22 +12,12 @@ class LoadBalancer {
         healthy: true,
         lastCheck: Date.now(),
         weight: 1
-      },
-      {
-        name: 'backend-2', 
-        url: 'https://sample.onrender.com',
-        healthy: true,
-        lastCheck: Date.now(),
-        weight: 1
-      },
-      {
-        name: 'backend-3',
-        url: 'https://sample1.onrender.com',
-        healthy: true,
-        lastCheck: Date.now(),
-        weight: 1
       }
     ];
+    
+    // Add retry logic for better reliability
+    this.maxRetries = 3;
+    this.retryDelay = 1000; // 1 second
     
     this.currentIndex = 0;
     this.healthCheckInterval = 30000; // 30 seconds
@@ -52,10 +42,10 @@ class LoadBalancer {
   }
 
   /**
-   * Make an API call with automatic failover
+   * Make an API call with automatic failover and retry logic
    */
   async makeRequest(endpoint, options = {}) {
-    const maxRetries = this.backends.length;
+    const maxRetries = this.maxRetries;
     let lastError;
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
@@ -63,12 +53,18 @@ class LoadBalancer {
         const backend = this.getNextBackend();
         const url = `${backend.url}${endpoint}`;
         
-        console.log(`🔄 Load Balancer: Attempting request to ${backend.name} (${url})`);
+        console.log(`🔄 Load Balancer: Attempt ${attempt + 1}/${maxRetries} to ${backend.name} (${url})`);
+        
+        // Create AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
         
         const response = await fetch(url, {
           ...options,
-          timeout: 10000 // 10 second timeout
+          signal: controller.signal
         });
+        
+        clearTimeout(timeoutId);
 
         if (response.ok) {
           console.log(`✅ Load Balancer: Success with ${backend.name}`);
@@ -77,20 +73,19 @@ class LoadBalancer {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
       } catch (error) {
-        console.warn(`⚠️ Load Balancer: Failed with ${this.backends[attempt % this.backends.length].name}:`, error.message);
+        console.warn(`⚠️ Load Balancer: Attempt ${attempt + 1} failed:`, error.message);
         lastError = error;
         
-        // Mark backend as unhealthy
-        this.backends[attempt % this.backends.length].healthy = false;
-        
-        // Wait before retry
+        // Wait before retry with exponential backoff
         if (attempt < maxRetries - 1) {
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          const delay = this.retryDelay * Math.pow(2, attempt);
+          console.log(`⏳ Retrying in ${delay}ms...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
         }
       }
     }
 
-    throw new Error(`All backends failed. Last error: ${lastError?.message}`);
+    throw new Error(`All retry attempts failed. Last error: ${lastError?.message}`);
   }
 
   /**
