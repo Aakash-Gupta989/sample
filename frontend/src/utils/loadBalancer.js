@@ -29,9 +29,9 @@ class LoadBalancer {
       }
     ];
     
-    // Add retry logic for better reliability
-    this.maxRetries = 3;
-    this.retryDelay = 1000; // 1 second
+    // Optimized retry logic for better performance
+    this.maxRetries = 1; // Reduce retries for speed
+    this.retryDelay = 500; // Faster retry
     
     this.currentIndex = 0;
     this.healthCheckInterval = 30000; // 30 seconds
@@ -71,7 +71,7 @@ class LoadBalancer {
         
         // Create AbortController for timeout
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout for speed
         
         const response = await fetch(url, {
           ...options,

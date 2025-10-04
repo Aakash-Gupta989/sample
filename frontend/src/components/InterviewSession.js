@@ -228,15 +228,25 @@ const InterviewSession = () => {
 
   // TTS for new AI messages
   useEffect(() => {
+    console.log('🎤 TTS Check - Message count:', messages.length, 'Input mode:', inputMode);
+    
     if (inputMode === 'voice' && messages.length > 0) {
       const lastMessage = messages[messages.length - 1];
+      console.log('🎤 Last message:', { role: lastMessage.role, content: lastMessage.content?.substring(0, 50) });
       
       if (lastMessage.role === 'assistant' && lastMessage.content) {
         // Skip TTS for silent messages (clarifications) and coding problems
         if (!lastMessage.silent && !lastMessage.isCodingProblem) {
+          console.log('🎤 Triggering TTS for AI message');
           playTTS(lastMessage.content, lastMessage);
+        } else {
+          console.log('🔇 TTS skipped - silent or coding problem');
         }
+      } else {
+        console.log('🔇 TTS skipped - not assistant message');
       }
+    } else {
+      console.log('🔇 TTS skipped - not voice mode or no messages');
     }
   }, [messages, inputMode]);
 
@@ -271,7 +281,10 @@ const InterviewSession = () => {
 
   // TTS functions with browser fallback
   const playTTS = async (text, message = null) => {
+    console.log('🎤 playTTS called:', { inputMode, textLength: text?.length, hasText: !!text?.trim() });
+    
     if (inputMode !== 'voice' || !text.trim()) {
+      console.log('🔇 TTS skipped - not voice mode or no text');
       return;
     }
     
