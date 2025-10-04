@@ -9,6 +9,7 @@ aiofiles
 httpx
 openai
 groq
+requests
 
 # Note: Removed heavy packages that cause build issues
 # - pydantic (causes Rust compilation issues)
