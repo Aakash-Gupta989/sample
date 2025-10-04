@@ -13,8 +13,8 @@ groq==0.4.1
 httptools==0.6.1
 
 # Lightweight alternatives for heavy packages
-Pillow==10.1.0
-numpy==1.24.3
+Pillow>=10.2.0
+numpy>=1.26.0
 
 # Note: Whisper, PyTorch, and OpenCV removed for memory constraints
 # These features will be disabled in production
