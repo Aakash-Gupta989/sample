@@ -15,7 +15,7 @@ def main():
     # Get port from environment (Render sets this)
     port = int(os.getenv("PORT", 8000))
     
-    # Render-optimized settings
+    # Render-optimized settings (without httptools for compatibility)
     config = {
         "host": "0.0.0.0",
         "port": port,
@@ -24,7 +24,7 @@ def main():
         "access_log": True,
         "reload": False,  # Disable reload for production
         "loop": "asyncio",
-        "http": "httptools",  # Faster HTTP parser
+        # Removed httptools for compatibility
     }
     
     print(f"🚀 Starting prepandhire-backend on port {port}")
