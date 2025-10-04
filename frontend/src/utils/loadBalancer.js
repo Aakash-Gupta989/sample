@@ -15,14 +15,14 @@ class LoadBalancer {
       },
       {
         name: 'backend-2', 
-        url: 'https://prepandhirebackend2.onrender.com',
+        url: 'https://sample.onrender.com',
         healthy: true,
         lastCheck: Date.now(),
         weight: 1
       },
       {
         name: 'backend-3',
-        url: 'https://prepandhirebackend3.onrender.com',
+        url: 'https://sample1.onrender.com',
         healthy: true,
         lastCheck: Date.now(),
         weight: 1

@@ -6,12 +6,14 @@ import InterviewSetup from './components/InterviewSetup';
 import LoadingPage from './components/LoadingPage';
 import InterviewSession from './components/InterviewSession';
 import InterviewResults from './components/InterviewResults';
+import LoadBalancerStatus from './components/LoadBalancerStatus';
 import './App.css';
 
 const App = () => {
   return (
     <Router>
       <div className="App">
+        <LoadBalancerStatus />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/setup" element={<InterviewSetup />} />

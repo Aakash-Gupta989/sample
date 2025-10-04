@@ -1,0 +1,168 @@
+.load-balancer-status {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.status-toggle {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+.status-toggle:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.status-panel {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 300px;
+  max-width: 400px;
+  z-index: 1001;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.status-header h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #333;
+  background: #f0f0f0;
+  border-radius: 50%;
+}
+
+.status-summary {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status-indicator.healthy {
+  color: #28a745;
+}
+
+.status-indicator.unhealthy {
+  color: #dc3545;
+}
+
+.backend-list {
+  padding: 12px 16px;
+}
+
+.backend-item {
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.backend-item.healthy {
+  background: #f8fff8;
+  border-color: #d4edda;
+}
+
+.backend-item.unhealthy {
+  background: #fff8f8;
+  border-color: #f5c6cb;
+}
+
+.backend-name {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.backend-url {
+  font-size: 11px;
+  color: #666;
+  font-family: monospace;
+  margin-bottom: 2px;
+}
+
+.backend-last-check {
+  font-size: 10px;
+  color: #999;
+}
+
+.status-actions {
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.refresh-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .load-balancer-status {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .status-panel {
+    min-width: 280px;
+    max-width: calc(100vw - 20px);
+  }
+}
