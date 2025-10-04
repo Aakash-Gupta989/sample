@@ -39,6 +39,16 @@ from interview_system.llm_integration import create_llm_client, MockLLMClient
 # Initialize FastAPI app
 app = FastAPI(title="EduAI Backend", version="1.0.0")
 
+# Health check endpoint for load balancer
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for load balancer"""
+    return {
+        "status": "healthy",
+        "timestamp": datetime.now().isoformat(),
+        "instance_id": os.getenv("INSTANCE_ID", "unknown")
+    }
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,

@@ -1,9 +1,9 @@
 import config from '../config';
+import loadBalancer from './loadBalancer';
 
-// API utility functions
+// API utility functions with load balancing
 export const apiCall = async (endpoint, options = {}) => {
-  const url = `${config.API_BASE_URL}${endpoint}`;
-  console.log('🌐 Making API call to:', url);
+  console.log('🌐 Making API call to:', endpoint);
   
   const defaultOptions = {
     headers: {
@@ -11,13 +11,23 @@ export const apiCall = async (endpoint, options = {}) => {
     },
   };
   
-  const response = await fetch(url, { ...defaultOptions, ...options });
-  
-  if (!response.ok) {
-    throw new Error(`API call failed: ${response.status} ${response.statusText}`);
+  try {
+    // Use load balancer for automatic failover
+    const response = await loadBalancer.makeRequest(endpoint, { ...defaultOptions, ...options });
+    return response;
+  } catch (error) {
+    console.error('❌ Load balancer failed, falling back to direct connection');
+    
+    // Fallback to direct connection
+    const url = `${config.API_BASE_URL}${endpoint}`;
+    const response = await fetch(url, { ...defaultOptions, ...options });
+    
+    if (!response.ok) {
+      throw new Error(`API call failed: ${response.status} ${response.statusText}`);
+    }
+    
+    return response;
   }
-  
-  return response;
 };
 
 // Specific API functions

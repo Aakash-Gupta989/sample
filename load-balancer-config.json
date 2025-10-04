@@ -1,0 +1,37 @@
+{
+  "load_balancer": {
+    "name": "prepandhire-lb",
+    "type": "round_robin",
+    "health_check": {
+      "path": "/health",
+      "interval": 30,
+      "timeout": 10,
+      "healthy_threshold": 2,
+      "unhealthy_threshold": 3
+    },
+    "backends": [
+      {
+        "name": "backend-1",
+        "url": "https://prepandhirebackend.onrender.com",
+        "weight": 1,
+        "enabled": true
+      },
+      {
+        "name": "backend-2", 
+        "url": "https://prepandhirebackend2.onrender.com",
+        "weight": 1,
+        "enabled": true
+      },
+      {
+        "name": "backend-3",
+        "url": "https://prepandhirebackend3.onrender.com", 
+        "weight": 1,
+        "enabled": true
+      }
+    ],
+    "failover": {
+      "enabled": true,
+      "timeout": 30
+    }
+  }
+}
