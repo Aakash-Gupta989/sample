@@ -473,42 +473,42 @@ async def run_code(payload: dict):
         raise HTTPException(status_code=500, detail=f"Code execution failed: {str(e)}")
 
 @app.post("/analyze")
-async def analyze_whiteboard(request: WhiteboardAnalysisRequest):
+async def analyze_whiteboard(request: dict):
     """Analyze whiteboard content and generate educational response"""
     try:
         # Determine which model to use (default to OpenAI for image analysis)
-        ai_model = getattr(request, 'ai_model', 'gpt4o')
+        ai_model = request.get('ai_model', 'gpt4o')
         
         if ai_model == 'groq':
             # Use Groq Llama 4 for analysis
             ai_response = groq_service.analyze_whiteboard_and_speech(
-                request.image_data,
-                request.user_speech or ""
+                request.get('image_data', ''),
+                request.get('user_speech', '') or ""
             )
             visual_analysis = "Analyzed with Groq Llama 4 Maverick (multimodal analysis)"
         else:
             # Use OpenAI GPT-4o for analysis (default for images)
             ai_response = openai_service.analyze_whiteboard_and_speech(
-                request.image_data,
-                request.user_speech or ""
+                request.get('image_data', ''),
+                request.get('user_speech', '') or ""
             )
             visual_analysis = "Analyzed with OpenAI GPT-4o (combined visual + speech analysis)"
         
-        return AnalysisResponse(
-            visual_analysis=visual_analysis,
-            ai_response=ai_response,
-            timestamp=datetime.now(),
-            success=True
-        )
+        return {
+            "visual_analysis": visual_analysis,
+            "ai_response": ai_response,
+            "timestamp": datetime.now().isoformat(),
+            "success": True
+        }
         
     except Exception as e:
-        return AnalysisResponse(
-            visual_analysis="",
-            ai_response=f"Sorry, I encountered an error: {str(e)}",
-            timestamp=datetime.now(),
-            success=False,
-            error=str(e)
-        )
+        return {
+            "visual_analysis": "",
+            "ai_response": f"Sorry, I encountered an error: {str(e)}",
+            "timestamp": datetime.now().isoformat(),
+            "success": False,
+            "error": str(e)
+        }
 
 @app.post("/analyze/practice")
 async def analyze_practice_answer(request: dict):
